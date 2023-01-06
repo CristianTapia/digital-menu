@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Menu</title>
+  <!-- Google Inconsolata font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+  <!-- CSS CodyHouse cart framework -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- CSS Sheet -->
+  <link rel="stylesheet" href="/css/cervezas.css">
+  <!-- Order products -->
+  <script>document.getElementsByTagName("html")[0].className += " js";</script>
+  <!-- Fontawesome Icons -->
+  <script src="https://kit.fontawesome.com/ae4293d1b9.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<!------------------------------------------------------------------------------------------------------
+-                                               MAIN                                                   -
+------------------------------------------------------------------------------------------------------->
+<main>
+	
+	<!-- Product 1 -->
+	<div class="grid-container">
+		<!-- Picture box -->
+		<div class="item1">
+			<img src="/img/alameda.jpg" alt="Peroni">
+			<div class="procedence">
+				<p>📍 Alemania</p>
+			</div>
+		</div>
+		<!-- Product info box -->
+		<div class="item2">
+			<!-- Title -->
+			<h1 class="resp-txt">Brouwerij Palm</h1>
+			<!-- Info -->
+			<p class="resp-txt">Lorem ipsum dolor sit amet, consLLLLLLLL<span id="dots">...</span>
+				<span id="more">erisque enim ligula venenatis dolor. Maecenas nisl est, ultrices 
+					nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. 
+					venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh 
+					tempor porta.</span>
+			</p>
+			<a class="resp-txt" onclick="readMore()" id="readMoreBtn">Ver más</a>
+		</div>
+		<!-- Price | More info | Add to command box-->
+		<div class="item3">
+			<!-- Price -->
+			<div class="price resp-txt">$5.400</div>
+			<!-- More info modal box -->
+			<div><i class="fa-solid fa-circle-info" id="myBtn"></i></div>
+			<!-- Add to command product -->
+			<div class="dropdown" style="float:right;">
+				<i class="fa-solid fa-beer-mug-empty"></i>
+				<div id="myDropdown" class="dropdown-content resp-txt">
+					<a class="js-cd-add-to-cart cd-add-to-cart" href="#0" data-price="25.99"><b>Pinta:</b> $25.99</a>
+					<a class="js-cd-add-to-cart cd-add-to-cart" href="#0" data-price="25.99"><b>Pitcher:</b> $25.99</a>
+					<a class="js-cd-add-to-cart cd-add-to-cart" href="#0" data-price="25.99"><b>Tuba:</b> $25.99</a>
+				</div>
+			</div>
+		</div>  
+	</div>
+
+	
+<!----------------------------
+-         Modal box          -
+----------------------------->	
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>Características</h2>
+    </div>
+    <div class="modal-body">
+      <p>Some text in the Modal Body</p>
+      <p>Some other text...</p>
+    </div>
+    <div class="modal-footer">
+      <h3>Modal Footer</h3>
+    </div>
+  </div>
+</div>
+
+
+<!----------------------------
+-            Orders          -
+----------------------------->
+
+<div class="cd-cart cd-cart--empty js-cd-cart">
+	<a href="#0" class="cd-cart__trigger text-replace">
+		Cart
+		<ul class="cd-cart__count"> <!-- cart items count -->
+			<li>0</li>
+			<li>0</li>
+		</ul> <!-- .cd-cart__count -->
+	</a>
+
+	<div class="cd-cart__content">
+		<div class="cd-cart__layout">
+			<header class="cd-cart__header">
+				<h2>Cart</h2>
+				<span class="cd-cart__undo">Item removed. <a href="#0">Undo</a></span>
+			</header>
+			
+			<div class="cd-cart__body">
+				<ul>
+					<!-- products added to the cart will be inserted here using JavaScript -->
+				</ul>
+			</div>
+
+			<footer class="cd-cart__footer">
+				<a href="#0" class="cd-cart__checkout">
+          <em>Checkout - $<span>0</span>
+            <svg class="icon icon--sm" viewBox="0 0 24 24"><g fill="none" stroke="currentColor"><line stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="3" y1="12" x2="21" y2="12"/><polyline stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="15,6 21,12 15,18 "/></g>
+            </svg>
+          </em>
+        </a>
+			</footer>
+		</div>
+	</div> <!-- .cd-cart__content -->
+</div> <!-- cd-cart -->
+</main>
+
+<!------------------------------------------------------------------------------------------------------
+-                                               FOOTER                                                 -
+------------------------------------------------------------------------------------------------------->
+<footer class="grid-container-footer">
+	<div><i class="fa-solid fa-book-open"></i><br>Menu</div>
+	<div><i class="fa-solid fa-hand"></i><br>Atención</div>
+	<div><i class="fa-solid fa-receipt"></i><br>Cuenta</div>
+</footer>
+
+<!------------------------------------------------------------------------------------------------------
+-                                               SCRIPTS                                                -
+------------------------------------------------------------------------------------------------------->
+
+<!-- JS CodyHouse framework -->
+<script src="assets/js/util.js"></script> 
+<script src="assets/js/main.js"></script>
+<!-- JS Sheets -->
+<script src="/js/cervezas.js"></script>
+</body>
+</html>
