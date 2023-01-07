@@ -55,7 +55,19 @@ body {
     font-family: 'Inconsolata', serif;
 }
 p {
-    color:white
+    color:white;
+}
+
+a {
+    letter-spacing: 2px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+footer {
+    color: white;
+    text-align: center;
+    align-items: center;
 }
 
 /*---------------------
@@ -96,3 +108,5 @@ button {
 button:hover, button:active {
     background-color: #ffc61b;
 }
+
+
