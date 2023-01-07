@@ -54,6 +54,9 @@ body {
     background-color:black;
     font-family: 'Inconsolata', serif;
 }
+p {
+    color:white
+}
 
 /*---------------------
 -      Container      -
@@ -76,7 +79,7 @@ body {
 -       Buttons       -
 ---------------------*/
 
-a:link, a:visited {
+button {
     background-color: #f8f9fa;
     color: black;
     padding: 10px;
@@ -86,8 +89,10 @@ a:link, a:visited {
     border-radius: 20px;
     font-weight: bold;
     margin-top: 30px;
+    min-width: 100%;
+    font-family: 'Inconsolata', serif;
 }
 
-a:hover, a:active {
+button:hover, button:active {
     background-color: #ffc61b;
 }
