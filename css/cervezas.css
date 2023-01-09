@@ -107,20 +107,27 @@ body{
 ---------------------*/
 
 /*----- Dropdown items -----*/
-.dropdown {
-    display: inline-block;
-    display: inline;
+.dropbtn {
     background-color: #ffc61b;
+    color: white;
     padding: 10px;
-    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
 }
 
 .dropdown-content {
     display: none;
     position: absolute;
-    right: 0;
     background-color: #f1f1f1;
-    min-width: auto;
+    right: 0;
+    min-width: 160px;
+    overflow: auto;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
 }
@@ -135,10 +142,6 @@ body{
 .dropdown a:hover {background-color: #ddd;}
 
 .show {display: block;}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-  }
 
 /*---------------------
 -      Modal box      -
@@ -157,10 +160,10 @@ body{
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  }
-  
-  /* Modal Content */
-  .modal-content {
+}
+
+/* Modal Content */
+.modal-content {
     position: relative;
     background-color: #fefefe;
     margin: auto;
@@ -172,47 +175,47 @@ body{
     -webkit-animation-duration: 0.4s;
     animation-name: animatetop;
     animation-duration: 0.4s
-  }
-  
-  /* Add Animation */
-  @-webkit-keyframes animatetop {
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
     from {top:-300px; opacity:0} 
     to {top:0; opacity:1}
-  }
-  
-  @keyframes animatetop {
+}
+
+@keyframes animatetop {
     from {top:-300px; opacity:0}
     to {top:0; opacity:1}
-  }
-  
-  /* The Close Button */
-  .close {
+}
+
+/* The Close Button */
+.close {
     color: white;
     float: right;
     font-size: 28px;
     font-weight: bold;
-  }
-  
-  .close:hover,
-  .close:focus {
+}
+
+.close:hover,
+.close:focus {
     color: #000;
     text-decoration: none;
     cursor: pointer;
-  }
-  
-  .modal-header {
+}
+
+.modal-header {
     padding: 2px 16px;
     background-color: #5cb85c;
     color: white;
-  }
-  
-  .modal-body {padding: 2px 16px;}
-  
-  .modal-footer {
+}
+
+.modal-body {padding: 2px 16px;}
+
+.modal-footer {
     padding: 2px 16px;
     background-color: #5cb85c;
     color: white;
-  }
+}
 
 /*---------------------
 -       Footer        -
@@ -239,3 +242,6 @@ body{
     justify-content: center;
     align-items: center;
 }
+
+
+
