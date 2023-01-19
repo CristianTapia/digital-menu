@@ -49,36 +49,54 @@
 			<!-- Price -->
 			<div class="price resp-txt">$5.400</div>
 			<!-- More info modal box -->
-			<div><i class="fa-solid fa-circle-info" id="myBtn"></i></div>
+			<div><i class="fa-solid fa-circle-info" id="modal-btn"></i></div>
 			<!-- Add to command product -->
 			<div class="dropdown">
-				<div onclick="myFunction()" class="dropbtn"><i class="fa-solid fa-beer-mug-empty"></i></div>
-				<div id="myDropdown" class="dropdown-content resp-txt">
-					<a class="js-cd-add-to-cart " href="#0" data-price="25.99"><b>Pinta:</b> $25.99</a>
-					<a class="js-cd-add-to-cart " href="#0" data-price="25.99"><b>Pitcher:</b> $25.99</a>
-					<a class="js-cd-add-to-cart " href="#0" data-price="25.99"><b>Tuba:</b> $25.99</a>
+				<div onclick="showOptions()"><i class="fa-solid fa-beer-mug-empty dropbtn"></i></div>
+				<div id="dropdown" class="dropdown-content resp-txt">
+					<a class="js-cd-add-to-cart" href="#0" data-price="25.99"><b>Pinta:</b> $25.99</a>
+					<a class="js-cd-add-to-cart" href="#0" data-price="25.99"><b>Pitcher:</b> $25.99</a>
+					<a class="js-cd-add-to-cart" href="#0" data-price="25.99"><b>Tuba:</b> $25.99</a>
 				</div>
 			</div>	
 		</div>
 	</div>
 
-	<!----------------------------
+<!----------------------------
 -         Modal box          -
 ----------------------------->	
 	<!-- The Modal -->
-	<div id="myModal" class="modal">
+	<div id="modal-box" class="modal">
 		<!-- Modal content -->
 		<div class="modal-content">
 			<div class="modal-header">
-			<span class="close">&times;</span>
-			<h2>Características</h2>
+				<h2 class="resp-txt">Características</h2>
 			</div>
 			<div class="modal-body">
-			<p>Some text in the Modal Body</p>
-			<p>Some other text...</p>
+				<table class="table">
+					<thead>
+						<tr>
+						<th scope="col">Estilo</th>
+						<th scope="col">%ABV</th>
+						<th scope="col">IBU</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+						<td>Belgian Pale Ale</td>
+						<td>5.2</td>
+						<td>18</td>
+						</tr>
+					</tbody>
+				</table>
+				<li><b>%ABV:</b> Cantidad de alcohol por litro</li>
+				<p>(5.2% = 52mL x L)<p>
+				<li><b>IBU:</b> Amargor de la cerveza</li>
+				<p>(0 = Poco amarga | 100 = Muy amarga)</p>
 			</div>
 			<div class="modal-footer">
-			<h3>Modal Footer</h3>
+				<button id="order">Ordenar</button>
+				<button class="resp-txt" id="close">Cerrar</button>
 			</div>
 		</div>
 	</div>
