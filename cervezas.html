@@ -4,12 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Menu</title>
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   <!-- Google Inconsolata font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
   <!-- CSS CodyHouse cart framework -->
   <link rel="stylesheet" href="assets/css/style.css">
   <!-- CSS Sheet -->
-  <link rel="stylesheet" href="/css/cervezas.css">
+  <link rel="stylesheet" href="css/cervezas.css">
   <!-- Order products -->
   <script>document.getElementsByTagName("html")[0].className += " js";</script>
   <!-- Fontawesome Icons -->
@@ -54,7 +56,7 @@
 			<div class="dropdown">
 				<div onclick="showOptions()"><i class="fa-solid fa-beer-mug-empty dropbtn"></i></div>
 				<div id="dropdown" class="dropdown-content resp-txt">
-					<a class="js-cd-add-to-cart" href="#0" data-price="25.99"><b>Pinta:</b> $25.99</a>
+					<a class="product js-cd-add-to-cart" href="#0" data-price="25.99"><b>Pinta:</b> $25.99</a>
 					<a class="js-cd-add-to-cart" href="#0" data-price="25.99"><b>Pitcher:</b> $25.99</a>
 					<a class="js-cd-add-to-cart" href="#0" data-price="25.99"><b>Tuba:</b> $25.99</a>
 				</div>
@@ -64,7 +66,7 @@
 	
 <!----------------------------
 -         Modal box          -
------------------------------>	
+----------------------------->
 	<!-- The Modal -->
 	<div id="modal-box" class="modal">
 		<!-- Modal content -->
@@ -104,6 +106,24 @@
 <!----------------------------
 -            Orders          -
 ----------------------------->
+
+<!-- Floating cart -->
+<div id="floating-cart">
+	<a href="#"><i class="fa-solid fa-beer-mug-empty"></i></a>
+</div>
+
+<!-- Cart content -->
+<div id="cart-content">
+
+</div>
+<div id="checkout">
+
+</div>
+
+<!-- Numero flotante -->
+<div>
+
+</div>
 
 <div class="cd-cart cd-cart--empty js-cd-cart">
 	<a href="#0" class="cd-cart__trigger text-replace">

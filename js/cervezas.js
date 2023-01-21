@@ -56,12 +56,6 @@ div.onclick = function() {
   modal.style.display = "none";
 }
 
-// window.onclick = function(event) {
-//   if (event.target == modal) {
-//     modal.style.display = "none";
-//   }
-// }
-
 var closeModal = function(event) {
   if (event.target == modal) {
         modal.style.display = "none";
@@ -69,3 +63,24 @@ var closeModal = function(event) {
 }
 
 window.addEventListener('click', closeModal);
+
+/*---------------------
+-       Orders        -
+---------------------*/
+
+$(document).ready(function(){
+  $('.product').click(function(){
+      $('#floating-cart').show();
+  });
+});
+
+/*---------------------
+-    Floating cart    -
+---------------------*/
+
+// Cart content
+$(document).ready(function(){
+  $("#floating-cart").click(function(){
+    $("#cart-content, #checkout").toggle();
+  });
+});
