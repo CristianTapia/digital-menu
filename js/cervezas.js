@@ -84,3 +84,13 @@ $(document).ready(function(){
     $("#cart-content, #checkout").toggle();
   });
 });
+
+// Remove product
+let removeProductFromCart = document.getElementsByClassName('remove');
+for (let i = 0; i < removeProductFromCart.length; i++) {
+  let binButton = removeProductFromCart[i];
+  binButton.addEventListener('click', function(event) {
+    let buttonClicked = event.target;
+    buttonClicked.parentElement.parentElement.parentElement.parentElement.remove();
+  })
+}
