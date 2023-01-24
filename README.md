@@ -1,19 +1,5 @@
-# Add to Cart Interaction
+# Menú estandarizado
 
-A floating cart component that reveals itself when the user adds an item to the cart.
+- **Dueños/as de bares y restaurantes:** Obtienen una mejora considerable en atención al cliente
 
-[Article on CodyHouse](https://codyhouse.co/gem/add-to-cart-interaction)
-
-[Demo](https://codyhouse.co/demo/add-to-cart-interaction)
-
-[License](https://codyhouse.co/license)
-
-## Dependencies
-
-This experiment is built upon the [CodyHouse Framework](https://github.com/CodyHouse/codyhouse-framework).
-
-Make sure to include both style.scss and util.js files of the framework.
-
-## Credits
-
-Icons: [Nucleo Library](https://nucleoapp.com/)
+- **Consumidores:** Su experiencia al asistir al lugar va a ser distinta a la que se acostumbra actualmente.
