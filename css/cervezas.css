@@ -7,7 +7,7 @@
         font-size: 1rem;
     }
     /*----- Outer div -----*/
-    .grid-container-product {
+    .product-content {
     display: flexbox;
     grid-template-columns: repeat(3, 1fr);
     /* box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px; */
@@ -20,7 +20,7 @@
 
 @media (min-width: 320px) {
     /*----- Outer div -----*/
-    .grid-container-product {
+    .product-content {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     /* box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px; */
@@ -36,7 +36,7 @@
         font-size: 1rem;
     }
     /*----- Outer div -----*/
-    .grid-container-product {
+    .product-content {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         /* box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px; */
@@ -52,7 +52,7 @@
         font-size: 1.2rem;
     }
     /*----- Outer div -----*/
-    .grid-container-product {
+    .product-content {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         /* box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px; */
@@ -201,7 +201,7 @@ body{
     z-index: 1;
     margin-right: 20px;
     margin-bottom: 100px;
-    position: absolute;
+    position: fixed;
     background-color: #fff;
     cursor: pointer;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
@@ -241,7 +241,7 @@ body{
     margin-bottom: 100px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 0;
-    overflow: hidden;
+    overflow: auto;
     height: 400px;
     /* width: 72px; */
     transition-timing-function: cubic-bezier(.67,.17,.32,.95);
@@ -397,7 +397,7 @@ th {
 ---------------------*/
 
 /*----- Inner div -----*/
-.grid-container-product > div {
+.product-content > div {
     text-align: center;
     padding: 20px;
     justify-content: center;
@@ -405,6 +405,6 @@ th {
 }
 
 /* Quantity */
-.qty {
+.mid {
     display: flex;
 }

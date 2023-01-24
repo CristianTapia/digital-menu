@@ -92,5 +92,26 @@ for (let i = 0; i < removeProductFromCart.length; i++) {
   binButton.addEventListener('click', function(event) {
     let buttonClicked = event.target;
     buttonClicked.parentElement.parentElement.parentElement.parentElement.remove();
+    updateCartTotal();
   })
+}
+
+// Update cart total
+function updateCartTotal() {
+  let cartContent = document.getElementById('cart-content');
+  let productContent = cartContent.getElementsByClassName('product-content');
+  let total = 0;
+  for (let i = 0; i < productContent.length; i++) {
+    let cartProducts = productContent[i];
+    let productPrice = cartProducts.getElementsByClassName('product-price')[0];
+    let ProductQuantity = cartProducts.getElementsByClassName('quantity')[0];
+    let price = parseInt(productPrice.innerText.replace('Pinta: $', ' '));
+    let quantity = ProductQuantity.value;
+    total = total + (price * quantity);
+  }
+  if (total == 0) {
+    let totalPrice = document.getElementById("checkout").innerHTML = `Total: $${total}`;
+  } else {
+    let totalPrice = document.getElementById("checkout").innerHTML = `Total: $${total}.000`;
+  }
 }
