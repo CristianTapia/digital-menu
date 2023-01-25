@@ -187,6 +187,10 @@ body{
 
 .show {display: block;}
 
+.product-prices {
+    display: none;
+}
+
 /*---------------------
 -        Cart         -
 ---------------------*/
@@ -215,7 +219,7 @@ body{
     width: 80%;
     background-color: #F2B705;
     border-radius: 0 0 10px 10px;
-    position: absolute;
+    position: fixed;
     padding: 10px;
     bottom: 0;
     right: 0;
@@ -233,7 +237,7 @@ body{
     width: 80%;
     background-color: #fff;
     border-radius: 10px;
-    position: absolute;
+    position: fixed;
     padding: 10px;
     bottom: 0;
     right: 0;

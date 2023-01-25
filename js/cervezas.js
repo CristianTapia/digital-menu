@@ -64,21 +64,11 @@ var closeModal = function(event) {
 
 window.addEventListener('click', closeModal);
 
-/*---------------------
--       Orders        -
----------------------*/
-
-$(document).ready(function(){
-  $('.product').click(function(){
-      $('#floating-cart').show();
-  });
-});
-
   /*---------------------
   -    Floating cart    -
   ---------------------*/
 
-// Cart content
+// Show/hide cart content
 $(document).ready(function(){
   $("#floating-cart").click(function(){
     $("#cart-content, #checkout").toggle();
@@ -86,7 +76,7 @@ $(document).ready(function(){
   
 });
 
-// Load page feature
+// Load page before JS feature
 if (document.readyState == 'loading') {
   document.addEventListener('DOMContentLoaded', ready);
 } else {
@@ -94,37 +84,67 @@ if (document.readyState == 'loading') {
 }
 
 function ready() {
-  // Remove product
-  let removeProductFromCart = document.getElementsByClassName('remove');
-  for (let i = 0; i < removeProductFromCart.length; i++) {
-    let binButton = removeProductFromCart[i];
-    binButton.addEventListener('click', removeProduct);
+
+
+
+
+  // Show floating cart when a product is clicked
+  $(document).ready(function(){
+    $('.dropdown-a, .dropdown-b, .dropdown-c').click(function(){
+        $('#floating-cart').show();
+    });
+    
+  });
+
+  // Select product from dropdown
+  let dropdownItemA = document.getElementsByClassName('dropdown-a');
+  let dropdownItemB = document.getElementsByClassName('dropdown-b');
+  let dropdownItemC = document.getElementsByClassName('dropdown-c');
+  for (let i = 0; i < dropdownItemA.length; i++) {
+    let itemA = dropdownItemA[i];
+    let itemB = dropdownItemB[i];
+    let itemC = dropdownItemC[i];
+    itemA.addEventListener('click', addToCart);
+    itemB.addEventListener('click', addToCart);
+    itemC.addEventListener('click', addToCart);
     updateCartTotal();
   }
 
-  // Accept only quantity of products > 0
-  let quantityInputs = document.getElementsByClassName('quantity');
-  for (let i = 0; i < quantityInputs.length; i++) {
-    let qtyInputs = quantityInputs[i];
-    console.log(qtyInputs)
-    qtyInputs.addEventListener('change', qtyChange);
-    updateCartTotal();
-  }
-}
 
-// Function called by EventListener
-function removeProduct(event) {
+// Function addToCart called by '// Select product from dropdown'
+function addToCart(event) {
   let buttonClicked = event.target;
-  buttonClicked.parentElement.parentElement.parentElement.parentElement.remove();
-  updateCartTotal();
+  let title = buttonClicked.parentElement.parentElement.parentElement.previousElementSibling.querySelector('.product-title').innerText;
+  let price = buttonClicked.innerText;
+  var picture = buttonClicked.parentElement.parentElement.parentElement.previousElementSibling.previousElementSibling.querySelector('.product-img').src;
+  console.log(title)
+  console.log(price)
+  console.log(picture)
+  addItemToCart(title, price, picture);
 }
 
-// Function called by EventListener
-function qtyChange(event) {
-  let qtyInputs = event.target;
-  if (isNaN(qtyInputs.value) || qtyInputs.value <= 0) {
-    qtyInputs.value = 1;
-  }
+function addItemToCart(title, price, picture) {
+  let itemContainer = document.createElement('div');
+  itemContainer.classList.add('product-content');
+  let item = document.getElementById('cart-content');
+  let itemContent = 
+    `
+    <div><img src="${picture}"></div>
+    <div>
+      <h1 class="resp-txt">${title}</h1>
+      <div class="mid">
+        <p>Cant.</p>
+        <input class="quantity" type="number" value="1">
+        <button class="remove"><i class="fa-solid fa-trash"></i></button>
+      </div>
+    </div>
+    <div><p class="product-price">${price}</p></div>
+    `;
+  itemContainer.innerHTML = itemContent;
+  item.append(itemContainer);
+  console.log('container product', itemContainer)
+  qtyProducts();
+  removeProducts();
   updateCartTotal();
 }
 
@@ -149,6 +169,42 @@ function updateCartTotal() {
   }
 }
 
+// Remove products from cart
+function removeProducts() {
+  let removeProductFromCart = document.getElementsByClassName('remove');
+  for (let i = 0; i < removeProductFromCart.length; i++) {
+  let binButton = removeProductFromCart[i];
+  binButton.addEventListener('click', removeProduct);
+  updateCartTotal();
+  }
 
+  function removeProduct(event) {
+    let buttonClicked = event.target;
+    let removeItem = buttonClicked.parentElement.parentElement.parentElement.parentElement.remove();
+    console.log('remove', removeItem)
+    updateCartTotal();
+  }
+}
+
+// Accept only quantity products >= 0
+function qtyProducts() {
+  let quantityInputs = document.getElementsByClassName('quantity');
+  for (let i = 0; i < quantityInputs.length; i++) {
+    let qtyInputs = quantityInputs[i];
+    console.log(qtyInputs)
+    qtyInputs.addEventListener('change', qtyChange);
+    updateCartTotal();
+  }
+
+  function qtyChange(event) {
+    let qtyInputs = event.target;
+    if (isNaN(qtyInputs.value) || qtyInputs.value <= 0) {
+      qtyInputs.value = 1;
+    }
+    updateCartTotal();
+  }
+}
+
+}
 
 
