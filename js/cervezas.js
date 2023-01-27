@@ -2,23 +2,20 @@
 -    Dropdown menu    -
 ---------------------*/
 
-// Show/hide dropdown
-function showOptions() {
-  document.getElementById("dropdown").classList.toggle("show");
-}
+// Display dropdown when the icon is clicked
+$(document).ready(function(){
+  $(".dropbtn").click(function() {
+    $(this).next().toggle();
+  });
+});
 
-// Close the dropdown if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    for (var i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
+// Close dropdown when click outside of it
+$(document).click(function(event){
+  let $target = $(event.target);
+  if (!$target.closest('.dropbtn').length) {
+    $('.dropdown-content').hide();
   }
-}
+})
 
 /*---------------------
 -      Read more      -
@@ -68,6 +65,20 @@ window.addEventListener('click', closeModal);
 -    Floating cart    -
 ---------------------*/
 
+// Show floating cart when a product is clicked
+$(document).ready(function(){
+  $('.dropdown-item').click(function(){
+      $('#floating-cart').show();
+  });
+});
+
+// Show/hide cart content
+$(document).ready(function(){
+  $("#floating-cart").click(function(){
+    $("#cart-content, #checkout").toggle();
+  });
+});
+
 // Load HTML page before the JS scripts
 if (document.readyState == 'loading') {
   document.addEventListener('DOMContentLoaded', ready);
@@ -75,24 +86,7 @@ if (document.readyState == 'loading') {
   ready();
 }
 
-let cartContent = document.getElementById('cart-content');
-console.log(cartContent)
-
 function ready() {
-
-  // Show floating cart when a product is clicked
-  $(document).ready(function(){
-    $('.dropdown-item').click(function(){
-        $('#floating-cart').show();
-    });
-  });
-
-  // Show/hide cart content
-  $(document).ready(function(){
-    $("#floating-cart").click(function(){
-      $("#cart-content, #checkout").toggle();
-    });
-  });
 
   // Select product from dropdown
   let dropdownItem = document.getElementsByClassName('dropdown-item');
