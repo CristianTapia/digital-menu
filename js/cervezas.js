@@ -68,7 +68,7 @@ window.addEventListener('click', closeModal);
 -    Floating cart    -
 ---------------------*/
 
-// Load page before JS feature
+// Load HTML page before the JS scripts
 if (document.readyState == 'loading') {
   document.addEventListener('DOMContentLoaded', ready);
 } else {
@@ -140,34 +140,6 @@ function ready() {
     qtyProducts();
   }
 
-  // function addItemToCart(title, price, picture) {
-  //   let cartContainer = document.createElement('div');
-  //   let cartContent = document.getElementById('cart-content');
-  //   let productName = document.getElementsByClassName('product-price');
-  //   for (let i = 0; i < productName.length; i++) {
-  //     if (productName[i].innerText == price) {
-  //       alert('El producto ya fue ingresado a la comanda')
-  //       return
-  //     }
-  //   }
-  //   let productContent = 
-  //     `<div class="product-content">
-  //       <div><img src="${picture}"></div>
-  //       <div>
-  //         <h1 class="resp-txt">${title}</h1>
-  //         <div class="mid">
-  //           <p>Cant.</p>
-  //           <input class="product-qty" type="number" value="1">
-  //           <button class="remove"><i class="fa-solid fa-trash"></i></button>
-  //         </div>
-  //       </div>
-  //       <div><p class="product-price">${price}</p></div>
-  //     </div>
-  //     `;
-  //   cartContainer.innerHTML = productContent;
-  //   cartContent.append(cartContainer);
-  // }
-
   // Remove products from cart
   function removeProducts() {
     let removeProductFromCart = document.getElementsByClassName('remove');
@@ -182,13 +154,6 @@ function ready() {
       console.log('remove', removeItem)
       updateCartTotal();
     }
-
-    // function removeProduct(event) {
-    //   let buttonClicked = event.target;
-    //   let removeItem = buttonClicked.parentElement.parentElement.parentElement.parentElement.remove();
-    //   console.log('remove', removeItem)
-    //   updateCartTotal();
-    // }
   }
 
   // Accept only quantity products >= 0
@@ -223,7 +188,8 @@ function ready() {
       console.log('total', total)
       console.log('cart content', cartContent)
       console.log('product content', productContent)
-      document.getElementById("checkout").innerHTML = `Total: $${total}`;
+        
     }
+    document.getElementById("checkout").innerHTML = `Total: $${total}`;
   }
 }
