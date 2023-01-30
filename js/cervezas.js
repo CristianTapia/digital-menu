@@ -95,12 +95,13 @@ function ready() {
     item.addEventListener('click', addToCart)
   }
 
-  // Function addToCart called in previous lines
   function addToCart(event) {
     let buttonClicked = event.target;
-    let picture = document.getElementsByClassName('product-img')[0].src;
-    let title = document.getElementsByClassName('product-title')[0].innerText;
-    let price = buttonClicked.getAttribute('data-price');
+    let getPictureParent = buttonClicked.closest('div.item3').previousElementSibling.previousElementSibling;
+    let getTitleParent = buttonClicked.closest('div.item3').previousElementSibling;
+    let price = buttonClicked.closest('a.dropdown-item').innerText;
+    let picture = getPictureParent.querySelector('.product-img').src;
+    let title = getTitleParent.querySelector('.product-title').innerText;
     addItemToCart(title, price, picture);
   }
 
@@ -111,7 +112,7 @@ function ready() {
     let productContent = 
       `<div><img src="${picture}"></div>
         <div>
-          <h1 class="resp-txt">${title}</h1>
+          <h1 class="product-title resp-txt">${title}</h1>
           <div class="mid">
             <p>Cant.</p>
             <input class="product-qty" type="number" value="1">
@@ -120,11 +121,14 @@ function ready() {
         </div>
         <div><p class="product-price">${price}</p></div>
       `;
-    let productName = document.getElementsByClassName('product-price');
-    for (let i = 0; i < productName.length; i++) {
-      if (productName[i].innerText == price) {
-        alert('El producto ya fue ingresado a la comanda');
-        return
+    let productPrice = document.getElementsByClassName('product-price');
+    let productTitle = document.getElementsByClassName('product-title');
+    for (let i = 0; i < productPrice.length; i++) {
+      for(let j = 0; j < productTitle.length; j++) {
+        if (productPrice[i].innerText == price && productTitle[j].innerText == title) {
+          alert('El producto ya fue ingresado a la comanda');
+          return
+        }
       }
     }
     cartContainer.innerHTML = productContent;
@@ -145,7 +149,6 @@ function ready() {
     function removeElement(event) {
       let buttonClicked = event.target;
       let removeItem = buttonClicked.closest('div.product-content').remove();
-      console.log('remove', removeItem)
       updateCartTotal();
     }
   }
@@ -176,13 +179,9 @@ function ready() {
       let cartProducts = productContent[i];
       let productPrice = cartProducts.getElementsByClassName('product-price')[0].innerText;
       let productQuantity = cartProducts.getElementsByClassName('product-qty')[0];
-      let price = parseInt(productPrice.replace('.', ''));
-      var quantity = productQuantity.value;
+      let price = parseInt(productPrice.replace(/\D/g,''));
+      let quantity = productQuantity.value;
       total = total + (price * quantity);
-      console.log('total', total)
-      console.log('cart content', cartContent)
-      console.log('product content', productContent)
-        
     }
     document.getElementById("checkout").innerHTML = `Total: $${total}`;
   }
