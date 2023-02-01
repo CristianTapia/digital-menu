@@ -3,81 +3,70 @@
 ---------------------*/
 
 @media (min-width: 0px) {
-    .resp-txt {
-        font-size: 1rem;
-    }
-    /*----- Outer div -----*/
-    /* .product-content {
-    display: flexbox;
-    grid-template-columns: repeat(3, 1fr);
+  .resp-txt {
+    font-size: 1rem;
+  }
+  /* Container */
+  .product-content {
+    display: grid;
+    /* grid-template-columns: repeat(3, 1fr); */
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
     color: #90a3bb;
+    bottom: 0;
     width: 100%;
-    z-index: 0;
-    overflow: hidden;
-    } */
+    z-index: 1;
+  }
 }
 
 @media (min-width: 320px) {
-    /*----- Outer div -----*/
-    /* .product-content {
+  .product-content {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
     color: #90a3bb;
+    bottom: 0;
     width: 100%;
-    z-index: 0;
-    overflow: hidden;
-    } */
+    z-index: 1;
+  }
 }
 
 @media (min-width: 540px) {
-    .resp-txt {
-        font-size: 1rem;
-    }
-    /*----- Outer div -----*/
-    /* .product-content {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
-        color: #90a3bb;
-        width: 100%;
-        z-index: 0;
-        overflow: hidden;
-    } */
+  .resp-txt {
+    font-size: 1rem;
+  }
+  .product-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+    color: #90a3bb;
+    bottom: 0;
+    width: 100%;
+    z-index: 1;
+  }
 }
 
 @media (min-width: 720px) {
-    .resp-txt {
-        font-size: 1.2rem;
-    }
-    /*----- Outer div -----*/
-    /* .product-content {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
-        color: #90a3bb;
-        width: 100%;
-        z-index: 0;
-        overflow: hidden;
-    } */
+  .resp-txt {
+    font-size: 1.2rem;
+  }
 }
 
 @media (min-width: 960px) {
-    .resp-txt {
-        font-size: 1.4rem;
-    }
+  .resp-txt {
+    font-size: 1.4rem;
+  }
 }
 
 @media (min-width: 1140px) {
-    .resp-txt {
-        font-size: 1.6rem;
-    }
+  .resp-txt {
+    font-size: 1.6rem;
+  }
 }
 
 @media (min-width: 1320px) {
-    .resp-txt {
-        font-size: 1.8rem;
-    }
+  .resp-txt {
+    font-size: 1.8rem;
+  }
 }
 
 /*---------------------
@@ -85,31 +74,31 @@
 ---------------------*/
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 img {
-    width: 100%;
-    min-width: 80px;
-    max-width: 80px;
+  width: 100%;
+  min-width: 80px;
+  max-width: 80px;
 }
 
 body {
-    background-color: #edf5ff;
-    font-family: 'Inconsolata', serif;
+  background-color: #edf5ff;
+  font-family: "Inconsolata", serif;
 }
 
 input {
-    border-radius: 100px;
-    margin: 5px;
-    border-color: #90a3bb;
-    width: 3em;
-    border-style: solid;
-    border-width: 0.05em;
+  border-radius: 100px;
+  margin: 5px;
+  border-color: #90a3bb;
+  width: 3em;
+  border-style: solid;
+  border-width: 0.05em;
 }
 
 a {
-    color: #90a3bb;
+  color: #90a3bb;
 }
 
 /*---------------------
@@ -118,46 +107,52 @@ a {
 
 /*----- Outer div -----*/
 .grid-container {
-    background-color: #fff;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
-    margin-top: 10px;
+  background-color: #fff;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+  margin-top: 10px;
 }
 
 /*----- Inner div -----*/
 .grid-container > div {
-    background-color: rgba(255, 255, 255, 0.8);
-    text-align: center;
-    padding: 10px;
-    justify-content: center;
-    align-items: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
 }
 
 /*----- Nested grid item1 -----*/
-.item1 { 
-    grid-area: span 2; 
-    display: grid;
+.item1 {
+  grid-area: span 2;
+  display: grid;
 }
 .procedence {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
 }
 
-.item2 { display: grid; }
+.item2 {
+  display: grid;
+}
 
 /*----- Nested grid item3 -----*/
-.item3 { 
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    column-gap: 20px;
+.item3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 20px;
 }
-.price { font-weight: bold; }
+.price {
+  font-weight: bold;
+}
 
 /*----- Read more -----*/
-#more { display: none; }
+#more {
+  display: none;
+}
 
 /*---------------------
 -    Dropdown list    -
@@ -165,38 +160,40 @@ a {
 
 /*----- Dropdown items -----*/
 .dropbtn {
-    background-color: #F2B705;
-    color: white;
-    padding: 10px;
-    border: none;
-    cursor: pointer;
-    border-radius: 10px;
+  background-color: #f2b705;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
 }
 
 .dropdown-container {
-    position: relative;
-    display: inline-block;
+  position: relative;
+  display: inline-block;
 }
 
 .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f1f1f1;
-    right: 0;
-    min-width: 160px;
-    overflow: auto;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  right: 0;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
 }
 
 .dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
 }
 
-.dropdown-container a:hover {background-color: #ddd;}
+.dropdown-container a:hover {
+  background-color: #ddd;
+}
 
 /*---------------------
 -        Cart         -
@@ -206,94 +203,90 @@ a {
 
 /* Floating icon */
 #floating-cart {
-    width: 60px;
-    height: 60px;
-    padding: 15px;
-    bottom: 0;
-    right: 0;
-    z-index: 1;
-    margin-right: 20px;
-    margin-bottom: 100px;
-    position: fixed;
-    background-color: #fff;
-    cursor: pointer;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    text-align: center;
-    border-radius: 10px;
-    display: none;
+  width: 60px;
+  height: 60px;
+  padding: 15px;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+  margin-right: 20px;
+  margin-bottom: 100px;
+  position: fixed;
+  background-color: #fff;
+  cursor: pointer;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  border-radius: 10px;
+  display: none;
 }
 
 /* Cart content */
 #cart-content {
-    width: 90%;
-    background-color: #fff;
-    border-radius: 10px;
-    position: fixed;
-    padding: 10px;
-    bottom: 0;
-    right: 0;
-    margin-right: 1.2rem;
-    margin-bottom: 6.3rem;
-    padding-bottom: 70px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    display: none;
-    overflow: auto;
-    height: 400px;
-    /* width: 100; */
-    /* z-index: 0; */
+  width: 90%;
+  background-color: #fff;
+  border-radius: 10px;
+  position: fixed;
+  padding: 10px;
+  bottom: 0;
+  right: 0;
+  margin-right: 1.2rem;
+  margin-bottom: 6.3rem;
+  padding-bottom: 70px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  display: none;
+  overflow: auto;
+  height: 400px;
+  /* width: 100; */
+  /* z-index: 0; */
 }
 
 /*----- Products -----*/
 
 /* Container */
-.product-content {
-    display: grid;
-    /* grid-template-columns: repeat(3, 1fr); */
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
-    color: #90a3bb;
-    /* bottom: 0; */
-    /* width: 100%; */
-    /* z-index: 1; */
-    /* min-width: 72px; */
-    /* overflow: inherit; */
-
-}
+/* .product-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+  color: #90a3bb;
+  bottom: 0;
+  width: 100%;
+  z-index: 1;
+} */
 
 /* Inner content*/
 .product-content > div {
-    padding: 20px;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    overflow: inherit;
+  padding: 20px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Quantity info */
 .mid {
-    text-align: center;
-    justify-content: center;
-    align-items: center;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
 }
 
 /*----- Checkout -----*/
 #checkout {
-    width: 80%;
-    background-color: #F2B705;
-    border-radius: 0 0 10px 10px;
-    position: fixed;
-    padding: 10px;
-    bottom: 0;
-    right: 0;
-    margin-right: 20px;
-    margin-bottom: 100px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 0;
-    /* overflow: hidden; */
-    height: 60px;
-    display: none;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
+  width: 80%;
+  background-color: #f2b705;
+  border-radius: 0 0 10px 10px;
+  position: fixed;
+  padding: 10px;
+  bottom: 0;
+  right: 0;
+  margin-right: 20px;
+  margin-bottom: 100px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 0;
+  /* overflow: hidden; */
+  height: 60px;
+  display: none;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
 }
 
 /*---------------------
@@ -302,111 +295,126 @@ a {
 
 /* Modal box */
 .modal {
-    display: none;
-    position: fixed; /*Stay in place */
-    z-index: 3; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  display: none;
+  position: fixed; /*Stay in place */
+  z-index: 3; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
 }
 
 /* Modal Content */
 .modal-content {
-    position: relative;
-    background-color: #fefefe;
-    border-radius: 10px;
-    margin: auto;
-    padding: 0;
-    /* border: 1px solid #888; */
-    width: 80%;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-    -webkit-animation-name: animatetop;
-    -webkit-animation-duration: 0.4s;
-    animation-name: animatetop;
-    animation-duration: 0.4s;
+  position: relative;
+  background-color: #fefefe;
+  border-radius: 10px;
+  margin: auto;
+  padding: 0;
+  /* border: 1px solid #888; */
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
 }
 
 /* Table */
-table, td {
-    border: 1px solid;
-    padding: 5px;
-    text-align: center;
-    margin-bottom: 30px;
+table,
+td {
+  border: 1px solid;
+  padding: 5px;
+  text-align: center;
+  margin-bottom: 30px;
 }
 th {
-    border: 1px solid;
-    padding: 5px;
-    text-align: center;
-    margin-bottom: 30px;
-    background-color: #F27405;
-    font-weight: bold;
-    color: #4b4b4b;
+  border: 1px solid;
+  padding: 5px;
+  text-align: center;
+  margin-bottom: 30px;
+  background-color: #f27405;
+  font-weight: bold;
+  color: #4b4b4b;
 }
 
 /* Animation */
 @keyframes animatetop {
-    from {top:-300px; opacity:0}
-    to {top:0; opacity:1}
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
 }
 @-webkit-keyframes animatetop {
-    from {top:-300px; opacity:0} 
-    to {top:0; opacity:1}
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
 }
 
 /* Close button */
 #close {
-    font-weight: bold;
-    background-color: #90a3bb;
-    padding: 8px;
-    border-radius: 10px;
-    border: none;
-    cursor: pointer;
-    color: #4b4b4b;
-    margin-left: 10px;
+  font-weight: bold;
+  background-color: #90a3bb;
+  padding: 8px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  color: #4b4b4b;
+  margin-left: 10px;
 }
 
 /* Order button */
 #order {
-    border: none;
-    cursor: pointer;
-    border-radius: 10px;
-    font-weight: bold;
-    background-color: #F2B705;
-    padding: 8px;
-    color: #4b4b4b;
-    margin-right: 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  font-weight: bold;
+  background-color: #f2b705;
+  padding: 8px;
+  color: #4b4b4b;
+  margin-right: 10px;
 }
 
 .close:hover,
 .close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .modal-header {
-    padding: 15px;
-    background-color: #F29F05;
-    border-radius: 10px 10px 0px 0px;
-    font-weight: bold;
+  padding: 15px;
+  background-color: #f29f05;
+  border-radius: 10px 10px 0px 0px;
+  font-weight: bold;
 }
 
 .mod-title {
-    color: #4b4b4b;
+  color: #4b4b4b;
 }
 
-.modal-body {padding: 30px;}
+.modal-body {
+  padding: 30px;
+}
 
 .modal-footer {
-    padding: 15px;
-    color: white;
-    display: flex;
-    justify-content: center;
+  padding: 15px;
+  color: white;
+  display: flex;
+  justify-content: center;
 }
 
 /*---------------------
@@ -415,22 +423,22 @@ th {
 
 /* Container */
 .grid-container-footer {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
-    color: #90a3bb;
-    background-color: #fff;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+  color: #90a3bb;
+  background-color: #fff;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 1;
 }
 
 /* Inner content */
 .grid-container-footer > div {
-    background-color: rgba(255, 255, 255, 0.8);
-    text-align: center;
-    padding: 20px;
-    justify-content: center;
-    align-items: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
 }
