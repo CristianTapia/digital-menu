@@ -110,16 +110,16 @@ function ready() {
     cartContainer.classList.add('product-content');
     let cartContent = document.getElementById('cart-content');
     let productContent = 
-      `<div><img src="${picture}"></div>
+      `<div class="left"><img src="${picture}"></div>
         <div>
           <h1 class="product-title resp-txt">${title}</h1>
           <div class="mid">
-            <p>Cant.</p>
-            <input class="product-qty" type="number" value="1">
-            <button class="remove"><i class="fa-solid fa-trash"></i></button>
+            Cant.
+            <input class="mid product-qty resp-txt" type="number" value="1">
+            <a class="remove"><i class="fa-solid fa-trash"></i></a>
           </div>
         </div>
-        <div><p class="product-price">${price}</p></div>
+        <div class="right"><p class="product-price resp-txt">${price}</p></div>
       `;
     let productPrice = document.getElementsByClassName('product-price');
     let productTitle = document.getElementsByClassName('product-title');
