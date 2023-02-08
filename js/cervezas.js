@@ -148,6 +148,7 @@ function ready() {
 
     function removeElement(event) {
       let buttonClicked = event.target;
+      console.log(buttonClicked)
       let removeItem = buttonClicked.closest('div.product-content').remove();
       updateCartTotal();
     }
@@ -179,10 +180,16 @@ function ready() {
       let cartProducts = productContent[i];
       let productPrice = cartProducts.getElementsByClassName('product-price')[0].innerText;
       let productQuantity = cartProducts.getElementsByClassName('product-qty')[0];
+      console.log(productQuantity)
       let price = parseInt(productPrice.replace(/\D/g,''));
       let quantity = productQuantity.value;
+      console.log(quantity)
       total = total + (price * quantity);
+      let CLPFormat = Intl.NumberFormat("es-CL").format(total)
+      document.getElementById("checkout").innerHTML = `Total: $${CLPFormat}`;
     }
-    document.getElementById("checkout").innerHTML = `Total: $${total}`;
+    if (total == 0) {
+      document.getElementById("checkout").innerHTML = `Total: $${total}`;
+    }
   }
 }
