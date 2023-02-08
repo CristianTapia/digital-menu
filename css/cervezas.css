@@ -240,6 +240,23 @@ a {
   /* z-index: 0; */
 }
 
+/*----- Products counter -----*/
+#product-count {
+  background-color: red;
+  border-radius: 100%;
+  width: 20px;
+  align-items: center;
+  text-align: center;
+  color:#ddd;
+  bottom: 0;
+  right: 0;
+  margin-right: 20px;
+  margin-bottom: 100px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  margin-right: 1.2rem;
+  margin-bottom: 6.3rem;
+}
+
 /*----- Products -----*/
 
 /* Container */
@@ -288,6 +305,8 @@ a {
   justify-content: center;
   align-items: center;
 }
+
+
 
 /*---------------------
 -      Modal box      -
