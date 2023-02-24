@@ -1,80 +1,13 @@
 /*---------------------
--   Responsive text   -
----------------------*/
-
-@media (min-width: 0px) {
-  .resp-txt {
-    font-size: 1rem;
-  }
-  /* Container */
-  .product-content {
-    display: grid;
-    /* grid-template-columns: repeat(3, 1fr); */
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
-    color: #90a3bb;
-    bottom: 0;
-    width: 100%;
-    z-index: 1;
-  }
-}
-
-@media (min-width: 320px) {
-  .product-content {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
-    color: #90a3bb;
-    bottom: 0;
-    width: 100%;
-    z-index: 1;
-  }
-}
-
-@media (min-width: 540px) {
-  .resp-txt {
-    font-size: 1rem;
-  }
-  .product-content {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
-    color: #90a3bb;
-    bottom: 0;
-    width: 100%;
-    z-index: 1;
-  }
-}
-
-@media (min-width: 720px) {
-  .resp-txt {
-    font-size: 1.2rem;
-  }
-}
-
-@media (min-width: 960px) {
-  .resp-txt {
-    font-size: 1.4rem;
-  }
-}
-
-@media (min-width: 1140px) {
-  .resp-txt {
-    font-size: 1.6rem;
-  }
-}
-
-@media (min-width: 1320px) {
-  .resp-txt {
-    font-size: 1.8rem;
-  }
-}
-
-/*---------------------
 -     General CSS     -
 ---------------------*/
 
 * {
   box-sizing: border-box;
+}
+
+main {
+  margin-bottom: 100px;
 }
 
 img {
@@ -181,7 +114,7 @@ a {
   min-width: 160px;
   overflow: auto;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
+  z-index: 2;
 }
 
 .dropdown-content a {
@@ -454,6 +387,7 @@ th {
   bottom: 0;
   width: 100%;
   z-index: 1;
+  /* margin-top: 500px; */
 }
 
 /* Inner content */
@@ -463,4 +397,54 @@ th {
   padding: 20px;
   justify-content: center;
   align-items: center;
+}
+
+/*---------------------
+-    RESPONSIVENESS   -
+---------------------*/
+
+@media (min-width: 0px) {
+  .resp-txt {
+    font-size: 1rem;
+  }
+  /* Container */
+  .product-content {
+    display: grid;
+  }
+}
+
+@media (min-width: 320px) {
+  .product-content {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 540px) {
+  .resp-txt {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 720px) {
+  .resp-txt {
+    font-size: 1.2rem;
+  }
+}
+
+@media (min-width: 960px) {
+  .resp-txt {
+    font-size: 1.4rem;
+  }
+}
+
+@media (min-width: 1140px) {
+  .resp-txt {
+    font-size: 1.6rem;
+  }
+}
+
+@media (min-width: 1320px) {
+  .resp-txt {
+    font-size: 1.8rem;
+  }
 }
