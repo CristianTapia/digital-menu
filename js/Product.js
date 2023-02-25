@@ -8,6 +8,6 @@ class Product {
     }
 
     setProductToMenu() {
-    
+        
     }
 }
