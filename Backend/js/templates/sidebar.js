@@ -1,41 +1,64 @@
-let sidebarTemplate = `
+let sidebarBigTemplate = `
 <div class="d-flex flex-column flex-shrink-0 p-3 bg-light" style="width: 200px;">
-    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
-      <svg class="bi pe-none me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
-      <span class="fs-4">Sidebar</span>
+  <div class="d-flex">
+    <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+      <i class="bi bi-list" style="font-size: 1.5rem;"></i>
     </a>
+    <span class="fs-5 text-center">Panel de mesas</span>
+  </div>    
     <hr>
     <ul class="nav nav-pills flex-column mb-auto">
+      
       <li class="nav-item">
         <a href="#" class="nav-link active" aria-current="page">
-          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
-          Home
+          <i class="bi bi-columns-gap"></i><span class="ms-2">Vista General</span>
         </a>
       </li>
+
+      <li class="nav-item">
+        <a class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#cart-collapse" aria-expanded="false">
+          <i class="bi bi-caret-right"></i><span class="ms-2">Editar Menú</span>
+        </a>
+        <div class="collapse" id="cart-collapse" style="">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="#" class="new-product link-dark d-inline-flex text-decoration-none rounded">Agregar Producto</a></li>
+            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Eliminar Producto</a></li>
+            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Editar Producto</a></li>
+          </ul>
+        </div>
+      </li>
+      
+      <li class="nav-item">
+        <a class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#drink-collapse" aria-expanded="false">
+          <i class="bi bi-caret-right"></i><span class="ms-2">Editar Tragos</span>
+        </a>
+        <div class="collapse" id="drink-collapse" style="">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="#" class="new-product link-dark d-inline-flex text-decoration-none rounded">Agregar Producto</a></li>
+            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Eliminar Producto</a></li>
+            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Editar Producto</a></li>
+          </ul>
+        </div>
+      </li>
+
       <li>
         <a href="#" class="nav-link link-dark">
-          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
-          Dashboard
+          <i class="bi bi-columns-gap"></i><span class="ms-2">Vista General</span>
         </a>
       </li>
+
       <li>
         <a href="#" class="nav-link link-dark">
-          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#table"></use></svg>
-          Orders
+          <i class="bi bi-columns-gap"></i><span class="ms-2">Vista General</span>
         </a>
       </li>
+
       <li>
         <a href="#" class="nav-link link-dark">
-          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#grid"></use></svg>
-          Products
+          <i class="bi bi-columns-gap"></i><span class="ms-2">Vista General</span>
         </a>
       </li>
-      <li>
-        <a href="#" class="nav-link link-dark">
-          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#people-circle"></use></svg>
-          Customers
-        </a>
-      </li>
+
     </ul>
     <hr>
     <div class="dropdown">
@@ -54,4 +77,4 @@ let sidebarTemplate = `
   </div>
 `;
 
-$("#sidebar").html(sidebarTemplate);
+$("#sidebar").html(sidebarBigTemplate);

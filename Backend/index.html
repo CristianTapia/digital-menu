@@ -8,52 +8,41 @@
     <script src="https://code.jquery.com/jquery-3.6.3.slim.min.js" integrity="sha256-ZwqZIVdD3iXNyGHbSYdsmWP//UBokj2FHAxKuSBKDSo=" crossorigin="anonymous"></script>
     <!-- Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous"/>
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
   </head>
   <body>
-
     <div id="header"></div>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-2" id="sidebar"></div>
-        
-        <main class="col-10">
-          <div class="row">
-            <div class="col">
-              <div class="card mt-4" style="width: 14rem;">
-                <div class="card-body">
-                  <h5 class="card-title">Mesa 1</h5>
-                  <div class="row">
-                    <a href="#" class="col btn btn-primary m-2">Atención</a>
-                    <a href="#" class="col btn btn-primary m-2">Cuenta</a>
-                    <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Detalles...</a>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-2" id="sidebar"></div>
+          <main class="col-10">
+            
+            <!-- <div id="add-product"></div> -->
 
+            <!-- <div class="row">
+              <div class="cards col"></div>
+              <div class="cards col"></div>
+              <div class="cards col"></div>
+              <div class="cards col"></div>
+              <div class="cards col"></div>
+            </div>
+            <div class="row">
+              <div class="cards col"></div>
+              <div class="cards col"></div>
+              <div class="cards col"></div>
+              <div class="cards col"></div>
+              <div class="cards col"></div>
+            </div>
+            <div class="row">
+              <div class="cards col"></div>
+              <div class="cards col"></div>
+              <div class="cards col"></div>
+              <div class="cards col"></div>
+              <div class="cards col"></div>
+            </div> -->
 
-
-                  </div>
-                  
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </main>
+          </main>
       </div>
     </div>
     
@@ -81,5 +70,8 @@
     <!-- HTML Templates -->
     <script src="js/templates/header.js"></script>
     <script src="js/templates/sidebar.js"></script>
+    <script src="js/templates/cards.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/templates/forms.js"></script>
   </body>
 </html>
