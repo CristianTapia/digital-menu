@@ -1,4 +1,4 @@
-let cardsTemplate = `
+export let cardsTemplate = `
 <div class="col">
     <div class="card mt-4" style="width: 14rem;">
         <div class="card-body">

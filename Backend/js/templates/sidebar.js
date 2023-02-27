@@ -10,8 +10,8 @@ let sidebarBigTemplate = `
     <ul class="nav nav-pills flex-column mb-auto">
       
       <li class="nav-item">
-        <a href="#" class="nav-link active" aria-current="page">
-          <i class="bi bi-columns-gap"></i><span class="ms-2">Vista General</span>
+        <a href="#" id="card-view" class="nav-link active" aria-current="page">
+          <i class="bi bi-columns-gap"></i><span class="ms-2">Vista Mesas</span>
         </a>
       </li>
 
@@ -21,26 +21,13 @@ let sidebarBigTemplate = `
         </a>
         <div class="collapse" id="cart-collapse" style="">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="#" class="new-product link-dark d-inline-flex text-decoration-none rounded">Agregar Producto</a></li>
-            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Eliminar Producto</a></li>
+            <li><a href="#" id="new-product" class="link-dark d-inline-flex text-decoration-none rounded">Agregar Producto</a></li>
+            <li><a href="#" id="del-product" class="link-dark d-inline-flex text-decoration-none rounded">Eliminar Producto</a></li>
             <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Editar Producto</a></li>
           </ul>
         </div>
       </li>
       
-      <li class="nav-item">
-        <a class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#drink-collapse" aria-expanded="false">
-          <i class="bi bi-caret-right"></i><span class="ms-2">Editar Tragos</span>
-        </a>
-        <div class="collapse" id="drink-collapse" style="">
-          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="#" class="new-product link-dark d-inline-flex text-decoration-none rounded">Agregar Producto</a></li>
-            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Eliminar Producto</a></li>
-            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Editar Producto</a></li>
-          </ul>
-        </div>
-      </li>
-
       <li>
         <a href="#" class="nav-link link-dark">
           <i class="bi bi-columns-gap"></i><span class="ms-2">Vista General</span>

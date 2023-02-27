@@ -1,10 +1,11 @@
 class Product {
-    constructor(name, information, price, picture, procedence) {
+    constructor(name, price, picture, catagory, procedence, information) {
         this.name = name;
-        this.information = information;
         this.price = price;
-        this.procedence = procedence;
         this.picture = picture;
+        this.catagory = catagory;
+        this.procedence = procedence;
+        this.information = information;
     }
 
     setProductToMenu() {
