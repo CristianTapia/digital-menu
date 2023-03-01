@@ -1,4 +1,6 @@
-export let cardsTemplate = `
+export { cardsTemplate }
+
+let cardsTemplate = `
 <div class="col">
     <div class="card mt-4" style="width: 14rem;">
         <div class="card-body">
@@ -14,3 +16,4 @@ export let cardsTemplate = `
 `;
 
 $(".cards").html(cardsTemplate);
+

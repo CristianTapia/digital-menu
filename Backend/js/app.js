@@ -1,32 +1,54 @@
-import { addProductTemplate } from "./templates/forms.js";
-import { deleteProductTemplate } from "./templates/forms.js";
+import { addProductTemplate, deleteProductTemplate, editProductTemplate } from "./templates/forms.js";
 import { cardsTemplate } from "./templates/cards.js";
+import { sidebarBigTemplate } from "./templates/sidebar.js";
+import { headerTemplate } from "./templates/header.js";
 
-// Default behavior
-$('#add-product, #delete-product').hide();
+/*------------------------
+-    SIDEBAR SELECTION   -
+------------------------*/
 
-/*---------------------
--      Card view      -
----------------------*/
+// Dispay card view as default
+$("#add-product, #delete-product, #edit-product, .procedence").hide();
 
-let cardView = document.getElementById('card-view');
-cardView.addEventListener('click', () => {
-    $('.cards').show();
-    $('#add-product, #delete-product').hide();
+/*------------------------
+-    Cart view option    -
+------------------------*/
+let cardView = document.getElementById("card-view");
+cardView.addEventListener("click", () => {
+  $(".cards").show();
+  $("#add-product, #delete-product, #edit-product").hide();
 });
 
-/*---------------------
--      Menu edit      -
----------------------*/
-
-let addProductOption = document.getElementById('new-product');
-addProductOption.addEventListener('click', () => {
-    $('#add-product').show();
-    $('.cards, #delete-product').hide();
+/*------------------------
+-    Menu edit option    -
+------------------------*/
+// Add product
+let addProductOption = document.getElementById("new-product");
+addProductOption.addEventListener("click", () => {
+  $("#add-product").show();
+  $(".cards, #delete-product, #edit-product").hide();
+});
+// Display procedence in form
+let categoryOption = document.getElementsByClassName("form-select")[0];
+categoryOption.addEventListener("change", () => {
+  let optionSelected = categoryOption.value;
+  if (optionSelected == 1 || optionSelected == 2) {
+    $(".procedence").show();
+  } else {
+    $(".procedence").hide();
+  }
 });
 
-let deleteProductOption = document.getElementById('del-product');
-deleteProductOption.addEventListener('click', () => {
-    $('#delete-product').show();
-    $('.cards, #add-product').hide();
+// Delete product
+let deleteProductOption = document.getElementById("del-product");
+deleteProductOption.addEventListener("click", () => {
+  $("#delete-product").show();
+  $(".cards, #add-product, #edit-product").hide();
+});
+
+// Edit product
+let editProductOption = document.getElementById("change-product");
+editProductOption.addEventListener("click", () => {
+  $("#edit-product").show();
+  $(".cards, #add-product, #delete-product").hide();
 });

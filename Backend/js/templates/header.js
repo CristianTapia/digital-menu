@@ -1,3 +1,5 @@
+export { headerTemplate }
+
 let headerTemplate = `
 <header class="p-3 text-bg-dark">
     <div class="container">
