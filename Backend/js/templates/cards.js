@@ -1,7 +1,7 @@
 export { cardsTemplate }
 
 let cardsTemplate = `
-<div class="col">
+<div class="d-flex justify-content-center col">
     <div class="card mt-4" style="width: 14rem;">
         <div class="card-body">
             <h5 class="card-title">Mesa 1</h5>
