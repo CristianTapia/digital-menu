@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Plataforma</title>
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous"/>
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+  </head>
+  <body>
+    {{> header}}
+    <div class="container-fluid">
+        <div class="row">
+            {{> sidebar}}
+             <main class="col">
+              {{> prod-edit}}
+             </main>
+        </div>
+    </div>
+    
+    
+    
+      {{!-- <div class="container-fluid">
+        <div class="row">
+
+          <main class="col">
+            <!-- Forms to meke changes with products -->
+            <div id="add-product"></div>
+            <div id="delete-product"></div>
+            <div id="edit-product"></div>
+            <!-- Cards printed -->
+            <div class="row">
+              <div class="cards col"></div>
+              <div class="cards col"></div>
+              <div class="cards col"></div>
+              <div class="cards col"></div>
+              <div class="cards col"></div>
+            </div>
+            <div class="row">
+              <div class="cards col"></div>
+              <div class="cards col"></div>
+              <div class="cards col"></div>
+              <div class="cards col"></div>
+              <div class="cards col"></div>
+            </div>
+            <div class="row">
+              <div class="cards col"></div>
+              <div class="cards col"></div>
+              <div class="cards col"></div>
+              <div class="cards col"></div>
+              <div class="cards col"></div>
+            </div>
+          </main>
+      </div>
+    </div> --}}
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+  </body>
+</html>
