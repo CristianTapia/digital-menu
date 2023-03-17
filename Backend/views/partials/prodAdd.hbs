@@ -1,0 +1,42 @@
+<div class="container d-flex justify-content-center mt-4">
+    <form id="form-add" class="w-75">
+        <div class="mb-4">
+            <label class="form-label fw-semibold">Título</label>
+            <input id="title-add" class="form-control" name="title">
+        </div>
+        <div class="mb-4">
+            <label class="form-label fw-semibold">Precio</label>
+            <div class="input-group">
+            <span class="input-group-text">$</span>
+            <input type="number" id="price-add" class="form-control" name="price">
+            </div>
+        </div>
+        <div class="mb-4">
+            <label for="formFile-add" class="form-label fw-semibold">Imagen de referencia</label>
+            <input class="form-control" type="file" id="formFile-add">
+        </div>
+        <div class="mb-4">
+            <label class="form-label fw-semibold">Categoría</label>
+            <select id="selectForm-add" class="form-select">
+                <option value="" selected disabled>Selecciona una opción</option>
+                <option value="1">Cervezas</option>
+                <option value="2">Nuestra selección maestra</option>
+                <option value="3">Destilados</option>
+                <option value="4">Cocktails</option>
+                <option value="5">Snacks</option>
+                <option value="6">Sandwiches</option>
+                <option value="7">Burgers</option>
+                <option value="8">Brick Burgers</option>
+            </select>
+        </div>
+        <div class="mb-4 procedence">
+            <label class="form-label fw-semibold">Procedencia</label>
+            <input class="form-control">
+        </div>
+        <div class="mb-4">
+            <label for="exampleFormControlTextarea1" class="form-label fw-semibold">Descripción</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Agregar</button>
+    </form>
+</div>
