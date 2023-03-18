@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Plataforma</title>
+    {{!-- jQuery --}}
+    <script src="https://code.jquery.com/jquery-3.6.4.js"
+        integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    {{!-- CSS Sheet --}}
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body style="background-color: #F2F2F2;">
+
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-xl-10">
+                <div class="card rounded-3 text-black">
+                    <div class="row g-0">
+                        <div class="col-lg-6">
+                            <div class="card-body p-md-5 mx-md-4">
+
+                                <div class="text-center">
+                                    <img src="https://media.licdn.com/dms/image/C4D0BAQGaWGWqIO2WzQ/company-logo_200_200/0/1619203437980?e=1687392000&v=beta&t=AgskeIEPXyXLH11jzh_SivEXmPx1rLhV968Sc-Z6edw"
+                                        style="width: 185px;" alt="logo">
+                                    <h4 class="mt-1 mb-5 pb-1">Panel de administración</h4>
+                                </div>
+
+                                <form>
+                                    {{!-- <p>Iniciar sesión</p> --}}
+                                    <div class="form-outline mb-4">
+                                        <input type="email" id="form2Example11" class="form-control" />
+                                        <label class="form-label" for="form2Example11">Usuario</label>
+                                    </div>
+
+                                    <div class="form-outline mb-4">
+                                        <input type="password" id="form2Example22" class="form-control" />
+                                        <label class="form-label" for="form2Example22">Contraseña</label>
+                                    </div>
+
+                                    <div class="text-center pt-1 mb-5 pb-1">
+                                        <a href="/index" class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3"
+                                            type="button">Iniciar sesión</a><br>
+                                        <a class="text-muted" href="#!">¿Olvidaste tu contraseña?</a>
+                                    </div>
+
+                                    <div class="d-flex align-items-center justify-content-center pb-4">
+                                        <p class="mb-0 me-2">¿No tienes cuenta?</p>
+                                        <button type="button" class="btn btn-outline-danger">Crear cuenta</button>
+                                    </div>
+
+                                </form>
+
+                            </div>
+                        </div>
+                        <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
+                            <div class="text-white px-3 py-4 p-md-5 mx-md-4">
+                                <h4 class="mb-4">Más que un sistema de comandas</h4>
+                                <p class="small mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                                    eiusmod
+                                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                                    nostrud
+                                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    {{!--
+    <script src="main.js"></script> --}}
+</body>
+
+</html>
