@@ -1,27 +1,59 @@
 // Load modules
-const express = require('express');
-const hbs = require('hbs');
-const fs = require('fs');
+import express from 'express';
+import { engine } from 'express-handlebars';
+import path from 'path';
+// import bodyParser from 'body-parser';
+// const hbs = require('hbs');
+// const fs = require('fs');
+
 
 // Create express server
 const app = express();
+const port = 3000;
 
-// Config server to use hbs engine
-app.set('view engine', 'hbs');
-hbs.registerPartials(__dirname + '/views/partials');
+app.engine('.hbs', engine({
+    extname: '.hbs',
+    defaultLayout: 'index'
+}));
 
+app.set('view engine', '.hbs');
+app.set('views', './views');
+
+app.use(express.static('public'));
+
+// Render pages
 app.get('/', (req, res) => {
-    res.render('index')
+    res.render('inicio-sesion');
 });
 
-app.get('/agregar-producto', (req, res) => {
-    res.render('add-product')
-});
+// app.get('/index', (req, res) => {
+//     res.render('index');
+// });
 
-app.get('/editar-producto', (req, res) => {
-    res.render('edit-product')
-});
+// app.get('/vista-planta', (req, res) => {
+//     res.render('floorplan');
+// });
 
-app.listen('3000', () => {
-    console.log('Servicio levantado')
+// app.get('/agregar-producto', (req, res) => {
+//     res.render('add-product');
+// });
+
+// app.get('/editar-producto', (req, res) => {
+//     res.render('edit-product');
+// });
+
+// app.get('/eliminar-producto', (req, res) => {
+//     res.render('del-product');
+// });
+
+// app.get('/asignar-mesa', (req, res) => {
+//     res.render('asign-table');
+// });
+
+// app.get('/config-mesas', (req, res) => {
+//     res.render('settings');
+// });
+
+app.listen(port, () => {
+    console.log('Servicio levantado');
 });
