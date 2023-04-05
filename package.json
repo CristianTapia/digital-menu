@@ -1,19 +1,14 @@
 {
   "dependencies": {
     "@types/node": "^18.14.6",
-    "body-parser": "^1.20.2",
-    "bootstrap": "^5.2.3",
     "express": "^4.18.2",
-    "express-handlebars": "^7.0.4",
-    "fs": "^0.0.1-security",
-    "nodemon": "^2.0.22",
-    "path": "^0.12.7"
+    "hbs": "^4.2.0",
+    "nodemon": "^2.0.22"
   },
   "name": "proyecto-carta",
   "description": "- **Dueños/as de bares y restaurantes:** Obtienen una mejora considerable en atención al cliente.",
   "version": "1.0.0",
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
