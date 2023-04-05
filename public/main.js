@@ -17,7 +17,7 @@ let tableConfig = document.getElementById('table-config');
 let url = window.location.pathname;
 
 switch (url) {
-  case '/index':
+  case '/vista-bloques':
     cardView.classList.replace('link-dark', 'active');
     break;
   case '/vista-planta':

@@ -11,13 +11,29 @@ hbs.registerPartials(__dirname + '/views/partials');
 
 app.use(express.static('public'));
 
-// Render pages
+
+/*----------------------------------------------------
+                   RENDERING PAGES                   -
+----------------------------------------------------*/
+
+/* -------- Front Office --------*/
+app.get('/index', (req, res) => {
+    res.render('index');
+});
+
+app.get('/carta', (req, res) => {
+    res.render('menu');
+});
+
+
+/* -------- Back Office --------*/
+
 app.get('/', (req, res) => {
     res.render('inicio-sesion');
 });
 
-app.get('/index', (req, res) => {
-    res.render('index');
+app.get('/vista-bloques', (req, res) => {
+    res.render('block-view');
 });
 
 app.get('/vista-planta', (req, res) => {
