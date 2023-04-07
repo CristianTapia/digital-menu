@@ -11,17 +11,19 @@
   <!-- Bootstrap 5 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
   <!-- CSS Sheet -->
-  <link rel="stylesheet" href="css/cervezas.css">
+  <link rel="stylesheet" href="css/menu.css">
   <!-- <script>document.getElementsByTagName("html")[0].className += " js";</script> -->
   <!-- Fontawesome Icons -->
   <script src="https://kit.fontawesome.com/ae4293d1b9.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
-<!------------------------------------------------------------------------------------------------------
--                                               MAIN                                                   -
-------------------------------------------------------------------------------------------------------->
+{{!------------------------------------------------------------ 
+-							MAIN 							  -
+-------------------------------------------------------------}}
 <main>
+
+	{{> categScroll}}
 
 	<!-- Product 1 -->
 	<div class="grid-container">
@@ -38,7 +40,7 @@
 			<h1 class="product-title resp-txt">Brouwerij Palm</h1>
 			<!-- Info -->
 			<p class="resp-txt">Lorem ipsum dolor sit amet, consLLLLLLLL<span class="dots">...</span>
-				<span class="show-more">erisque enim ligula venenatis dolor. Maecenas nisl est, ultrices 
+				<span class="hide-element">erisque enim ligula venenatis dolor. Maecenas nisl est, ultrices 
 					nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. 
 					venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh 
 					tempor porta.</span>
@@ -50,7 +52,7 @@
 			<!-- Price -->
 			<div class="resp-txt">Desde $5.990</div>
 			<!-- More info modal box -->
-			<div><i class="fa-solid fa-circle-info" id="modal-btn"></i></div>
+			<div><i class="fa-solid fa-circle-info modal-btn"></i></div>
 			<!-- Add to command product -->
 			<div class="dropdown-container">
 				<i class="fa-solid fa-beer-mug-empty dropbtn"></i>
@@ -78,7 +80,7 @@
 			<h1 class="product-title resp-txt">Peroni</h1>
 			<!-- Info -->
 			<p class="resp-txt">Lorem ipsum dolor sit amet, consLLLLLLLL<span class="dots">...</span>
-				<span class="show-more">erisque enim ligula venenatis dolor. Maecenas nisl est, ultrices 
+				<span class="hide-element">erisque enim ligula venenatis dolor. Maecenas nisl est, ultrices 
 					nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. 
 					venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh 
 					tempor porta.</span>
@@ -90,7 +92,7 @@
 			<!-- Price -->
 			<div class="resp-txt">Desde $6.000</div>
 			<!-- More info modal box -->
-			<div><i class="fa-solid fa-circle-info" id="modal-btn"></i></div>
+			<div><i class="fa-solid fa-circle-info modal-btn"></i></div>
 			<!-- Add to command product -->
 			<div class="dropdown-container">
 				<i class="fa-solid fa-beer-mug-empty dropbtn"></i>
@@ -118,7 +120,7 @@
 			<h1 class="product-title resp-txt">Chile taes</h1>
 			<!-- Info -->
 			<p class="resp-txt">Lorem ipsum dolor sit amet, consLLLLLLLL<span class="dots">...</span>
-				<span class="show-more">erisque enim ligula venenatis dolor. Maecenas nisl est, ultrices 
+				<span class="hide-element">erisque enim ligula venenatis dolor. Maecenas nisl est, ultrices 
 					nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. 
 					venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh 
 					tempor porta.</span>
@@ -130,7 +132,7 @@
 			<!-- Price -->
 			<div class="resp-txt">Desde $3.000</div>
 			<!-- More info modal box -->
-			<div><i class="fa-solid fa-circle-info" id="modal-btn"></i></div>
+			<div><i class="fa-solid fa-circle-info modal-btn"></i></div>
 			<!-- Add to command product -->
 			<div class="dropdown-container">
 				<i class="fa-solid fa-beer-mug-empty dropbtn"></i>
@@ -143,48 +145,49 @@
 		</div>
 	</div>
 
-<!----------------------------
--         Modal box          -
------------------------------>
-	<!-- The Modal -->
-	<div id="modal-box" class="modal">
-		<!-- Modal content -->
-		<div class="modal-content">
-			<div class="modal-header">
-				<h2 class="mod-title resp-txt">Características 🍺</h2>
+{{!---------------------------
+- 		  Modal Box			 -
+----------------------------}}
+<!-- The Modal -->
+<div id="modal" class="modal-box hide-element">
+	<!-- Modal content -->
+	<div class="modal-content">
+		<div class="modal-header">
+			<h2 class="mod-title resp-txt">Características 🍺</h2>
+		</div>
+		<div class="modal-body">
+			<table class="table">
+				<thead>
+					<tr>
+					<th scope="col">Estilo</th>
+					<th scope="col">%ABV</th>
+					<th scope="col">IBU</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+					<td>Belgian Pale Ale</td>
+					<td>5.2</td>
+					<td>18</td>
+					</tr>
+				</tbody>
+			</table>
+			<div>
+				<li><span class="bold">%ABV:</span> Cantidad de alcohol por litro <br>(5.2% = 52mL x L)</li>
+				<br><li><span class="bold">IBU:</span> Amargor de la cerveza <br>(0 = Poco amarga | 100 = Muy amarga)</li>
 			</div>
-			<div class="modal-body">
-				<table class="table">
-					<thead>
-						<tr>
-						<th scope="col">Estilo</th>
-						<th scope="col">%ABV</th>
-						<th scope="col">IBU</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-						<td>Belgian Pale Ale</td>
-						<td>5.2</td>
-						<td>18</td>
-						</tr>
-					</tbody>
-				</table>
-				<div>
-					<li><span class="bold">%ABV:</span> Cantidad de alcohol por litro <br>(5.2% = 52mL x L)</li>
-					<br><li><span class="bold">IBU:</span> Amargor de la cerveza <br>(0 = Poco amarga | 100 = Muy amarga)</li>
 				</div>
-					</div>
-			<div class="modal-footer">
-				<button class="resp-txt" id="order">Ordenar</button>
-				<button class="resp-txt" id="close">Cerrar</button>
-			</div>
+		<div class="modal-footer">
+			<button class="resp-txt" id="order">Ordenar</button>
+			<button class="resp-txt" id="close">Cerrar</button>
 		</div>
 	</div>
+</div>
 
-<!----------------------------
--            Orders          -
------------------------------>
+
+{{!---------------------------
+- 			Orders			 -
+----------------------------}}
 
 <!-- Floating cart -->
 <div id="floating-cart">
@@ -200,18 +203,18 @@
 
 </main>
 
-<!------------------------------------------------------------------------------------------------------
--                                               FOOTER                                                 -
-------------------------------------------------------------------------------------------------------->
+{{!------------------------------------------------------------ 
+-							FOOTER 							  -
+-------------------------------------------------------------}}
 <footer class="grid-container-footer">
 	<div><i class="fa-solid fa-book-open"></i><br>Menu</div>
 	<div><i class="fa-solid fa-hand"></i><br>Atención</div>
 	<div><i class="fa-solid fa-receipt"></i><br>Cuenta</div>
 </footer>
 
-<!------------------------------------------------------------------------------------------------------
--                                               SCRIPTS                                                -
-------------------------------------------------------------------------------------------------------->
+{{!------------------------------------------------------------ 
+-							SCRIPTS  						  -
+-------------------------------------------------------------}}
 <!-- Bootstrap 5 -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 <!-- JS Sheets -->

@@ -24,7 +24,7 @@ $(document).click(function(event) {
 let readMoreBtn = document.getElementsByClassName('readMoreBtn');
 
 for (let i = 0; i < readMoreBtn.length; i++) {
-  readMoreBtnArray = readMoreBtn[i];
+  let readMoreBtnArray = readMoreBtn[i];
   readMoreBtnArray.addEventListener('click', (event) => {
     let buttonClicked = event.target;
     let showMoreElement = buttonClicked.closest('.readMoreBtn');
@@ -48,25 +48,20 @@ for (let i = 0; i < readMoreBtn.length; i++) {
 -      Modal box      -
 ---------------------*/
 
-var modal = document.getElementById("modal-box");
-var btn = document.getElementById("modal-btn");
-var div = document.getElementById("close");
-// Open the modal
-btn.onclick = function() {
-  modal.style.display = "block";
-}
-// Close the modal
-div.onclick = function() {
-  modal.style.display = "none";
-}
+let modalBtn = document.getElementsByClassName('modal-btn');
+let modalBox = document.getElementById('modal');
+let modalContent = document.getElementsByClassName('modal-content')[0];
+let closeButton = document.getElementById('close');
 
-var closeModal = function(event) {
-  if (event.target == modal) {
-        modal.style.display = "none";
-  }
+for (let i = 0; i < modalBtn.length; i++) {
+  modalBtnArray = modalBtn[i];
+  modalBtnArray.addEventListener('click', () => {
+    modalBox.classList.replace('hide-element', 'show-element');
+    closeButton.addEventListener('click', () => {
+      modalBox.classList.replace('show-element', 'hide-element');
+    });
+  })
 }
-
-window.addEventListener('click', closeModal);
 
 /*---------------------
 -    Floating cart    -
@@ -134,7 +129,7 @@ function ready() {
       for(let j = 0; j < productTitle.length; j++) {
         if (productPrice[i].innerText == price && productTitle[j].innerText == title) {
           alert('El producto ya fue ingresado a la comanda');
-          return
+          return;
         }
       }
     }

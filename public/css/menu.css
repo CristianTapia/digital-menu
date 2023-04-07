@@ -6,7 +6,7 @@
   box-sizing: border-box;
 }
 
-.show-more {
+.hide-element {
   display: none;
 }
 
@@ -40,6 +40,25 @@ input {
 
 a {
   color: #90a3bb;
+}
+
+/*---------------------
+-  Categories scroll  -
+---------------------*/
+
+div.scrollmenu {
+  background-color: #333;
+  overflow: auto;
+  white-space: nowrap;
+  width: 100vw;
+}
+
+div.scrollmenu a {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
 }
 
 /*---------------------
@@ -252,8 +271,8 @@ a {
 ---------------------*/
 
 /* Modal box */
-.modal {
-  display: none;
+#modal {
+  /* display: none; */
   position: fixed; /*Stay in place */
   z-index: 3; /* Sit on top */
   padding-top: 100px; /* Location of the box */
