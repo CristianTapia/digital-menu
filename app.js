@@ -1,19 +1,28 @@
 // Load modules
-const express = require('express');
-const hbs = require('hbs');
+import path from 'path';
+import { fileURLToPath } from 'url';
+import express from 'express';
+import hbs from 'hbs';
+// import { dbConnection } from './lib/db_connection.js';
+
+// DB connection
+// dbConnection();
 
 // Create express server
 const app = express();
 const port = 3000;
 
 app.set('view engine', 'hbs');
-hbs.registerPartials(__dirname + '/views/partials');
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+console.log('Directory name 👉️', __dirname)
+
+hbs.registerPartials(__dirname + '/views/partials');
 app.use(express.static('public'));
 
-
 /*----------------------------------------------------
-                   RENDERING PAGES                   -
+-                   RENDERING PAGES                  -
 ----------------------------------------------------*/
 
 /* -------- Front Office --------*/
@@ -63,3 +72,4 @@ app.get('/config-mesas', (req, res) => {
 app.listen(port, () => {
     console.log('Servicio levantado');
 });
+
