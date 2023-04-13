@@ -1,28 +1,27 @@
 <div class="container d-flex justify-content-center mt-4">
-    <form id="form-add" class="w-75">
-
+    <form id="add-waiter" class="w-75">
         <div class="mb-4">
             <label class="form-label fw-semibold">Agregar mesero/a</label>
-            
             <div class="d-flex">
                 <div class="col-md-5 pe-1">
                     <label for="name" class="form-label">Nombre</label>
-                    <input type="text" class="form-control" id="name">
+                    <input name="name" type="text" class="form-control" id="name">
                 </div>
                 <div class="col-md-5 ps-1 pe-1">
                     <label for="last-name" class="form-label">Apellido</label>
-                    <input type="text" class="form-control" id="last-name">
+                    <input name="last-name"type="text" class="form-control" id="last-name">
                     
                 </div>
                 <div class="col-md-2 ps-1 ">
-                    <a href="#" type="button" class="btn btn-primary">Aceptar</a>
+                    <button href="#" type="submit" id="add-btn" class="btn btn-primary">Agregar</button>
                     <a href="#" type="button">Deshacer</a>
                 </div>
             </div>
         </div>
-        
-
-
+    </form>
+</div>
+<div class="container d-flex justify-content-center mt-4">
+    <form class="w-75">
         <div class="mb-4">
             <label class="form-label fw-semibold">Número total de mesas</label>
             <input type="number" id="table-num" class="form-control" name="title">

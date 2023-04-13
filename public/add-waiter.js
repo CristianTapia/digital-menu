@@ -1,10 +1,9 @@
-let waiterName = document.getElementById('name');
-let waiterLastName = document.getElementById('last-name');
+let waiterForm = document.getElementById("add-waiter");
 
-waiterName.addEventListener('input', () => {
-    let value = waiterName.value;
-    return value;
+waiterForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  let name = waiterForm.elements["name"].value;
+  let lastName = waiterForm.elements["last-name"].value;
+  console.log("name", name);
+  console.log("last name", lastName);
 });
-
-
-console.log(value)

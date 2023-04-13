@@ -3,20 +3,39 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import express from 'express';
 import hbs from 'hbs';
-// import { dbConnection } from './lib/db_connection.js';
 
-// DB connection
-// dbConnection();
+// Sequelize and DB
+import { sequelize } from './src/database/connection.js';
+import { waitersRoutes } from './src/routes/waiters.routes.js';
+
+async function main() {
+  try {
+    await sequelize.sync();
+    await sequelize.authenticate();
+    console.log("Connection has been established successfully");
+    app.listen(port, () => {
+      console.log("Server listening");
+    });
+  } catch (error) {
+    console.error("Unable to connect to the database:", error);
+  }
+}
+
+main();
 
 // Create express server
 const app = express();
 const port = 3000;
 
+// Middleware
+app.use(express.json());
+app.use(waitersRoutes);
+
 app.set('view engine', 'hbs');
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-console.log('Directory name 👉️', __dirname)
+console.log('Directory name 👉️', __dirname);
 
 hbs.registerPartials(__dirname + '/views/partials');
 app.use(express.static('public'));
@@ -69,7 +88,4 @@ app.get('/config-mesas', (req, res) => {
     res.render('settings');
 });
 
-app.listen(port, () => {
-    console.log('Servicio levantado');
-});
-
+export { app };
