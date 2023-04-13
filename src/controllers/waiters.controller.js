@@ -1,19 +1,19 @@
 import { waiter } from "../models/Waiter.js";
 
-const getWaiter = (req, res) => {
-    res.send('Getting')
-}
+const getWaiter = async (req, res) => {
+  const waiters = await waiter.findAll();
+  res.json(waiters);
+};
 
 const createWaiter = async (req, res) => {
-    // console.log(req.body)
-    res.send('Successfully posted')
-    const {name, lastName} = req.body;
-    const newWaiter = await waiter.create({
-        name,
-        lastName
-    })
+  const { name, lastName } = req.body;
+  const newWaiter = await waiter.create({
+    name,
+    lastName,
+  });
 
-    console.log(newWaiter)
-}
+  console.log(newWaiter);
+  res.json(newWaiter);
+};
 
 export { getWaiter, createWaiter };

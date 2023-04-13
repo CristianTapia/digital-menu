@@ -11,8 +11,8 @@ import { waitersRoutes } from './src/routes/waiters.routes.js';
 async function main() {
   try {
     await sequelize.sync();
-    await sequelize.authenticate();
-    console.log("Connection has been established successfully");
+    // await sequelize.authenticate();
+    // console.log("Connection has been established successfully");
     app.listen(port, () => {
       console.log("Server listening");
     });
@@ -44,7 +44,7 @@ app.use(express.static('public'));
 -                   RENDERING PAGES                  -
 ----------------------------------------------------*/
 
-/* -------- Front Office --------*/
+/* -------- Front Office -------- */
 app.get('/index', (req, res) => {
     res.render('index');
 });
@@ -54,7 +54,7 @@ app.get('/carta', (req, res) => {
 });
 
 
-/* -------- Back Office --------*/
+/* -------- Back Office -------- */
 
 app.get('/', (req, res) => {
     res.render('inicio-sesion');
@@ -87,5 +87,3 @@ app.get('/asignar-mesa', (req, res) => {
 app.get('/config-mesas', (req, res) => {
     res.render('settings');
 });
-
-export { app };
