@@ -2,7 +2,6 @@ import { waiter } from "../models/Waiter.js";
 
 const getWaiter = async (req, res) => {
   try {
-    throw new Error ('failed')
     const waiters = await waiter.findAll();
     res.json(waiters);
   } catch (error) {
