@@ -11,8 +11,8 @@ import { waitersRoutes } from './src/routes/waiters.routes.js';
 async function main() {
   try {
     await sequelize.sync();
-    // await sequelize.authenticate();
-    // console.log("Connection has been established successfully");
+    await sequelize.authenticate();
+    console.log("Connection has been established successfully");
     app.listen(port, () => {
       console.log("Server listening");
     });
