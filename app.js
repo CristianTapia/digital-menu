@@ -7,6 +7,7 @@ import hbs from 'hbs';
 // Sequelize and DB
 import { sequelize } from './src/database/connection.js';
 import { waitersRoutes } from './src/routes/waiters.routes.js';
+import { categoriesRoutes } from './src/routes/categories.routes.js';
 
 async function main() {
   try {
@@ -29,7 +30,9 @@ const port = 3000;
 
 // Middleware
 app.use(express.json());
+app.use(express.static('public'));
 app.use(waitersRoutes);
+app.use(categoriesRoutes);
 
 app.set('view engine', 'hbs');
 
@@ -38,7 +41,7 @@ const __dirname = path.dirname(__filename);
 console.log('Directory name 👉️', __dirname);
 
 hbs.registerPartials(__dirname + '/views/partials');
-app.use(express.static('public'));
+
 
 /*----------------------------------------------------
 -                   RENDERING PAGES                  -

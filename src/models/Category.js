@@ -1,13 +1,12 @@
 import { DataTypes, Model } from "sequelize";
 import { sequelize } from "../database/connection.js";
 
-class Waiter extends Model {}
+class Category extends Model {}
 
-export const waiter = Waiter.init({
+export const category = Category.init({
     name: { type: DataTypes.STRING },
-    lastName: { type: DataTypes.STRING },
   },
-  { sequelize, modelName: "waiters",
+  { sequelize, modelName: "categories",
     timestamps: false,
     createdAt: false, }
 );
