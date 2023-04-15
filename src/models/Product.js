@@ -10,7 +10,14 @@ export const product = Product.init({
     description: { type: DataTypes.STRING},
     category: { type: DataTypes.INTEGER }
   },
-  { sequelize, modelName: "waiters",
+  { sequelize, modelName: "products",
     timestamps: false,
     createdAt: false, }
 );
+
+// Foreign Key
+Product.hasOne(Category, {
+    foreignKey: 'myFooId'
+  });
+  Category.belongsTo(Product);
+  
