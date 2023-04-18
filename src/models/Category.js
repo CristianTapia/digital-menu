@@ -4,7 +4,7 @@ import { sequelize } from "../database/connection.js";
 class Category extends Model {}
 
 export const category = Category.init({
-    name: { type: DataTypes.STRING },
+    name: { type: DataTypes.TEXT },
   },
   { sequelize, modelName: "categories",
     timestamps: false,

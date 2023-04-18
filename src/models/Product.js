@@ -4,11 +4,12 @@ import { sequelize } from "../database/connection.js";
 class Product extends Model {}
 
 export const product = Product.init({
-    name: { type: DataTypes.STRING },
+    name: { type: DataTypes.TEXT },
     price: { type: DataTypes.INTEGER },
-    image: { type: DataTypes.STRING },
-    description: { type: DataTypes.STRING},
-    category: { type: DataTypes.INTEGER }
+    image: { type: DataTypes.TEXT },
+    procedence: { type: DataTypes.TEXT },
+    description: { type: DataTypes.TEXT},
+    category: { type: DataTypes.TEXT }
   },
   { sequelize, modelName: "products",
     timestamps: false,
@@ -16,8 +17,8 @@ export const product = Product.init({
 );
 
 // Foreign Key
-Product.hasOne(Category, {
-    foreignKey: 'myFooId'
-  });
-  Category.belongsTo(Product);
+// Product.hasOne(Category, {
+//     foreignKey: 'categoryId'
+//   });
+//   Category.belongsTo(Product);
   

@@ -8,6 +8,7 @@ import hbs from 'hbs';
 import { sequelize } from './src/database/connection.js';
 import { waitersRoutes } from './src/routes/waiters.routes.js';
 import { categoriesRoutes } from './src/routes/categories.routes.js';
+import { productsRoutes } from './src/routes/products.routes.js';
 
 async function main() {
   try {
@@ -33,6 +34,7 @@ app.use(express.json());
 app.use(express.static('public'));
 app.use(waitersRoutes);
 app.use(categoriesRoutes);
+app.use(productsRoutes);
 
 app.set('view engine', 'hbs');
 
