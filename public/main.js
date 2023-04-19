@@ -13,7 +13,6 @@ let floorplan = document.getElementById('floorplan');
 let tableAsign = document.getElementById('table-asign');
 let tableConfig = document.getElementById('table-config');
 
-
 let url = window.location.pathname;
 
 switch (url) {
@@ -44,7 +43,16 @@ switch (url) {
   case '/asignar-mesa':
     tableAsign.classList.replace('link-dark', 'active');
   break;
-  case '/config-mesas':
+  case '/configuraciones':
+    tableConfig.classList.replace('link-dark', 'active');
+  break;
+  case '/configuraciones/meseros':
+    tableConfig.classList.replace('link-dark', 'active');
+  break;
+  case '/configuraciones/categorias':
+    tableConfig.classList.replace('link-dark', 'active');
+  break;
+  case '/configuraciones/mesas':
     tableConfig.classList.replace('link-dark', 'active');
   break;
 }

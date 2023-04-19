@@ -24,6 +24,27 @@
         <main class="col">
           <div class="row">
             {{> settingsCard }}
+            <div class="container d-flex justify-content-center mt-4">
+              <form id="add-waiter" class="w-75">
+                <div class="mb-4">
+                  <label class="form-label fw-semibold">Agregar mesero/a</label>
+                  <div class="d-flex">
+                    <div class="col-md-5 pe-1">
+                      <label for="name" class="form-label">Nombre</label>
+                      <input name="name" type="text" class="form-control">
+                    </div>
+                    <div class="col-md-5 ps-1 pe-1">
+                      <label for="last-name" class="form-label">Apellido</label>
+                      <input name="last-name" type="text" class="form-control">
+                    </div>
+                    <div class="col-md-2 ps-1 ">
+                      <button href="#" type="submit" class="btn btn-primary">Agregar</button>
+                      <a href="#" type="button">Deshacer</a>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
           </div>
         </main>
       </div>
@@ -32,5 +53,6 @@
     <!-- Bootstrap 5 JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <script src="/main.js"></script>
+    <script src="/add-waiter.js"></script>
   </body>
 </html>

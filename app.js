@@ -9,6 +9,7 @@ import { sequelize } from './src/database/connection.js';
 import { waitersRoutes } from './src/routes/waiters.routes.js';
 import { categoriesRoutes } from './src/routes/categories.routes.js';
 import { productsRoutes } from './src/routes/products.routes.js';
+import { tablesRoutes } from './src/routes/tables.routes.js';
 
 async function main() {
   try {
@@ -35,6 +36,7 @@ app.use(express.static('public'));
 app.use(waitersRoutes);
 app.use(categoriesRoutes);
 app.use(productsRoutes);
+app.use(tablesRoutes);
 
 app.set('view engine', 'hbs');
 
@@ -44,12 +46,12 @@ console.log('Directory name 👉️', __dirname);
 
 hbs.registerPartials(__dirname + '/views/partials');
 
-
 /*----------------------------------------------------
 -                   RENDERING PAGES                  -
 ----------------------------------------------------*/
 
 /* -------- Front Office -------- */
+
 app.get('/index', (req, res) => {
     res.render('index');
 });
@@ -73,22 +75,40 @@ app.get('/vista-planta', (req, res) => {
     res.render('floorplan');
 });
 
-app.get('/agregar-producto', (req, res) => {
-    res.render('add-product');
+app.get('/agregar-producto', async (req, res) => {
+    const result = await fetch("http://localhost:3000/categories");
+    const data = await result.json();
+    res.render('add-product', { categories: data });
 });
 
-app.get('/editar-producto', (req, res) => {
-    res.render('edit-product');
+app.get('/editar-producto', async (req, res) => {
+    const result = await fetch("http://localhost:3000/categories");
+    const data = await result.json();
+    res.render('edit-product', { categories: data });
 });
 
-app.get('/eliminar-producto', (req, res) => {
-    res.render('del-product');
+app.get('/eliminar-producto', async (req, res) => {
+    const result = await fetch("http://localhost:3000/categories");
+    const data = await result.json();
+    res.render('del-product', { categories: data });
 });
 
 app.get('/asignar-mesa', (req, res) => {
     res.render('asign-table');
 });
 
-app.get('/config-mesas', (req, res) => {
+app.get('/configuraciones', (req, res) => {
     res.render('settings');
+});
+
+app.get('/configuraciones/meseros', (req, res) => {
+    res.render('settings-waiters');
+});
+
+app.get('/configuraciones/categorias', (req, res) => {
+    res.render('settings-categories');
+});
+
+app.get('/configuraciones/mesas', (req, res) => {
+    res.render('settings-tables');
 });

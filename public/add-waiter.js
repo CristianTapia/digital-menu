@@ -1,5 +1,10 @@
 let waiterForm = document.getElementById("add-waiter");
+let waiterCard = document.getElementById('waiterCard');
 
+// Change the color when the card is selected
+waiterCard.classList.add('bg-primary', 'bg-gradient', 'text-white');
+
+// Send data after the button is clicked
 waiterForm.addEventListener("submit", (event) => {
   event.preventDefault();
   let inputName = waiterForm.elements["name"].value;
@@ -13,9 +18,7 @@ waiterForm.addEventListener("submit", (event) => {
       try {
         const response = await fetch("http://localhost:3000/waiters", {
           method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
+          headers: { "Content-Type": "application/json" },
           body: JSON.stringify(data),
         });
         const result = await response.json();
