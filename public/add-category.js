@@ -32,4 +32,3 @@ categoryForm.addEventListener("submit", (event) => {
     postJSON(data);
   }
 });
-

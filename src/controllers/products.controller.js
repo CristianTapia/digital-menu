@@ -11,14 +11,14 @@ const getProduct = async (req, res) => {
 
 const createProduct = async (req, res) => {
   try {
-    const { name, price, image, procedence, description, category } = req.body;
+    const { name, price, image, procedence, description, categoryId } = req.body;
     const newProduct = await product.create({
       name,
       price,
       image,
       procedence,
       description,
-      category
+      categoryId
     });
     console.log(newProduct);
     res.json(newProduct);

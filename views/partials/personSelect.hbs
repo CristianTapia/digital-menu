@@ -3,13 +3,10 @@
         <div class="mb-4">
             <label class="form-label fw-semibold">Seleccionar mesero/a</label>
             <select id="selectForm-add" class="form-select">
-                <option value="1" selected disabled>Selecciona una opción</option>
-                <option value="2">Juan</option>
-                <option value="3">Juana</option>
-                <option value="4">Pedro</option>
-                <option value="4">Pedra</option>
-                <option value="5">Diego</option>
-                <option value="6">Diega</option>
+                <option selected disabled>Selecciona una opción</option>
+                {{#each waiters}}
+                <option>{{name}} {{lastName}}</option>
+                {{/each}}
             </select>
         </div>
         <button type="submit" class="btn btn-primary">Aceptar</button>

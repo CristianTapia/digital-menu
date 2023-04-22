@@ -26,31 +26,26 @@
 	{{> categScroll}}
 
 	<!-- Product 1 -->
+	{{#each products}}
 	<div class="grid-container">
 		<!-- Picture box -->
 		<div class="item1">
 			<img class="product-img" src="img/alameda.jpg" alt="Peroni">
 			<div class="procedence">
-				<p>📍 Alemania</p>
+				<p>📍 {{procedence}}</p>
 			</div>
 		</div>
 		<!-- Product info box -->
 		<div class="item2">
 			<!-- Title -->
-			<h1 class="product-title resp-txt">Brouwerij Palm</h1>
+			<h1 class="product-title resp-txt"><b>{{name}}</b></h1>
 			<!-- Info -->
-			<p class="resp-txt">Lorem ipsum dolor sit amet, consLLLLLLLL<span class="dots">...</span>
-				<span class="hide-element">erisque enim ligula venenatis dolor. Maecenas nisl est, ultrices 
-					nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. 
-					venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh 
-					tempor porta.</span>
-			</p>
-			<a class="resp-txt readMoreBtn">Ver más</a>
+			<p class="resp-txt">{{description}}</p>
 		</div>
 		<!-- Price | More info | Add to command box-->
 		<div class="item3">
 			<!-- Price -->
-			<div class="resp-txt">Desde $5.990</div>
+			<div class="resp-txt">${{price}}</div>
 			<!-- More info modal box -->
 			<div><i class="fa-solid fa-circle-info modal-btn"></i></div>
 			<!-- Add to command product -->
@@ -64,8 +59,9 @@
 			</div>	
 		</div>
 	</div>
+	{{/each}}
 
-	<!-- Product 2 -->
+	{{!-- <!-- Product 2 -->
 	<div class="grid-container">
 		<!-- Picture box -->
 		<div class="item1">
@@ -143,7 +139,7 @@
 				</div>
 			</div>	
 		</div>
-	</div>
+	</div> --}}
 
 {{!---------------------------
 - 		  Modal Box			 -

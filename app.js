@@ -16,6 +16,7 @@ async function main() {
     await sequelize.sync();
     await sequelize.authenticate();
     console.log("Connection has been established successfully");
+
     app.listen(port, () => {
       console.log("Server listening");
     });
@@ -56,10 +57,13 @@ app.get('/index', (req, res) => {
     res.render('index');
 });
 
-app.get('/carta', (req, res) => {
-    res.render('menu');
+app.get('/carta', async (req, res) => {
+    const resultCategories = await fetch('http://localhost:3000/categories');
+    const resultProducts = await fetch('http://localhost:3000/products');
+    const dataCategories = await resultCategories.json();
+    const dataProducts = await resultProducts.json();
+    res.render('menu', { categories: dataCategories, products: dataProducts });
 });
-
 
 /* -------- Back Office -------- */
 
@@ -67,8 +71,10 @@ app.get('/', (req, res) => {
     res.render('inicio-sesion');
 });
 
-app.get('/vista-bloques', (req, res) => {
-    res.render('block-view');
+app.get('/vista-bloques', async (req, res) => {
+    const result = await fetch('http://localhost:3000/tables');
+    const data = await result.json();
+    res.render('block-view', { tables: data });
 });
 
 app.get('/vista-planta', (req, res) => {
@@ -101,7 +107,7 @@ app.get('/configuraciones', (req, res) => {
     res.render('settings');
 });
 
-app.get('/configuraciones/meseros', (req, res) => {
+app.get('/configuraciones/meseros', async (req, res) => {
     res.render('settings-waiters');
 });
 
@@ -109,6 +115,8 @@ app.get('/configuraciones/categorias', (req, res) => {
     res.render('settings-categories');
 });
 
-app.get('/configuraciones/mesas', (req, res) => {
-    res.render('settings-tables');
+app.get('/configuraciones/mesas', async (req, res) => {
+    const resultWaiters = await fetch("http://localhost:3000/waiters");
+    const dataWaiters = await resultWaiters.json();
+    res.render('settings-tables', { waiters: dataWaiters });
 });

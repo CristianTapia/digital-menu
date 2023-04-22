@@ -8,17 +8,10 @@ export const product = Product.init({
     price: { type: DataTypes.INTEGER },
     image: { type: DataTypes.TEXT },
     procedence: { type: DataTypes.TEXT },
-    description: { type: DataTypes.TEXT},
-    category: { type: DataTypes.TEXT }
+    description: { type: DataTypes.TEXT },
+    categoryId: { type: DataTypes.INTEGER }
   },
   { sequelize, modelName: "products",
     timestamps: false,
     createdAt: false, }
 );
-
-// Foreign Key
-// Product.hasOne(Category, {
-//     foreignKey: 'categoryId'
-//   });
-//   Category.belongsTo(Product);
-  
