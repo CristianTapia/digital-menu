@@ -1,0 +1,48 @@
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div>
+          <div style="border-radius: 15px;">
+            <div class="card-body p-5">
+              <h2 class="text-uppercase text-center mb-5">Crear una cuenta</h2>
+
+              <form id="create-account" action="/" method="POST">
+
+                <div class="form-outline mb-4">
+                  <input name="name" type="text" class="form-control form-control-lg" />
+                  <label for="name" class="form-label">Nombre</label>
+                </div>
+
+                <div class="form-outline mb-4">
+                  <input name="email" type="text" class="form-control form-control-lg" />
+                  <label for="email" class="form-label">Email</label>
+                </div>
+
+                <div class="form-outline mb-4">
+                  <input name="password" type="password" class="form-control form-control-lg" />
+                  <label for="password" class="form-label">Contraseña</label>
+                </div>
+
+                <div class="form-outline mb-4">
+                  <input name="password2" type="password" class="form-control form-control-lg" />
+                  <label for="password2" class="form-label">Repetir contraseña</label>
+                </div>
+
+                <div class="d-flex justify-content-center">
+                  <button type="submit" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Registrar</button>
+                </div>
+
+                <p class="text-center text-muted mt-5 mb-0">¿Tienes una cuenta? <a href="/"
+                    class="fw-bold text-body"><u>Inicia sesión aquí</u></a></p>
+
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,13 +1,18 @@
 {
   "dependencies": {
+    "bcrypt": "^5.1.0",
+    "cookie-parser": "^1.4.6",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "hbs": "^4.2.0",
+    "jsonwebtoken": "^9.0.0",
     "path": "^0.12.7",
     "pg": "^8.10.0",
     "pg-hstore": "^2.3.4",
     "sequelize": "^6.31.0",
-    "url": "^0.11.0"
+    "sweetalert2": "^11.7.3",
+    "url": "^0.11.0",
+    "util": "^0.12.5"
   },
   "name": "proyecto-carta",
   "description": "- **Dueños/as de bares y restaurantes:** Obtienen una mejora considerable en atención al cliente.",
