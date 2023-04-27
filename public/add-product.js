@@ -1,11 +1,11 @@
 // Display field procedence in the form
 let categoryOption = document.getElementById("selectForm-add");
 let addProductForm = document.getElementById("add-product");
-let procedenceLink = document.getElementById('procedence-link');
-let procedenceBox = document.getElementById('procedence-box');
+let procedenceLink = document.getElementById("procedence-link");
+let procedenceBox = document.getElementById("procedence-box");
 
-procedenceLink.addEventListener('click', () => {
-  procedenceBox.classList.toggle('d-none');
+procedenceLink.addEventListener("click", () => {
+  procedenceBox.classList.toggle("d-none");
 });
 
 addProductForm.addEventListener("submit", (event) => {
@@ -14,16 +14,17 @@ addProductForm.addEventListener("submit", (event) => {
   let inputPrice = addProductForm.elements["price"].value;
   let inputProcedence = addProductForm.elements["procedence"].value;
   let inputDescription = addProductForm.elements["description"].value;
-  let selectedOption = categoryOption.options[categoryOption.selectedIndex].text;
-  let selectedOptionNum = parseInt(selectedOption.replace(/\D/g, ''));
+  let selectedOption = categoryOption.options[categoryOption.selectedIndex];
+  let selectedOptionNum = parseInt(selectedOption.value);
 
   const data = {
     name: inputName,
     price: inputPrice,
     procedence: inputProcedence,
     description: inputDescription,
-    categoryId: selectedOptionNum };
-  
+    categoryId: selectedOptionNum,
+  };
+
   async function postJSON(data) {
     try {
       const response = await fetch("http://localhost:3000/products", {
@@ -34,7 +35,7 @@ addProductForm.addEventListener("submit", (event) => {
       const result = await response.json();
       console.log("Success: ", result);
       if (result) {
-        alert('Agregado con exito');
+        alert("Agregado con exito");
       }
     } catch (error) {
       console.error("Error: ", error);

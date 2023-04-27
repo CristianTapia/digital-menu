@@ -1,15 +1,14 @@
 import pkg from "jsonwebtoken";
-import bcrypt from 'bcrypt';
+import bcrypt from "bcrypt";
 import { user } from "../models/User.js";
 import { promisify } from "util";
-import Swal from 'sweetalert2';
 
 const getUser = async (req, res) => {
   try {
     const users = await user.findAll();
     res.json(users);
   } catch (error) {
-    return res.status(500).json({message: error.message});
+    return res.status(500).json({ message: error.message });
   }
 };
 
@@ -21,28 +20,28 @@ const userRegister = async (req, res) => {
     let password = await bcrypt.hash(noEncryptedPassword, 8);
     let password2 = req.body.password2;
     if (!name || !email || !password) {
-      res.render("/", {
+      res.render("/register", {
         alert: true,
         alertTitle: "test",
-        alertMessage: 'test',
-        alertIcon: 'info',
+        alertMessage: "test",
+        alertIcon: "info",
         showConfirmButton: true,
         timer: false,
-        ruta: ''
+        ruta: "register",
       });
     } else {
       const newUser = await user.create({
         name,
         email,
-        password
+        password,
       });
-      
+
       console.log(newUser);
       // res.json(newUser);
-      res.redirect('/');
+      res.redirect("/");
     }
   } catch (error) {
-    return res.status(500).json({message: error.message});
+    return res.status(500).json({ message: error.message });
   }
 };
 
@@ -58,10 +57,9 @@ const userLogin = async (req, res) => {
       //   footer: '<a href="">Why do I have this issue?</a>'
       // })
     } else {
-
     }
   } catch (error) {
-    return res.status(500).json({message: error.message});
+    return res.status(500).json({ message: error.message });
   }
 };
 

@@ -1,9 +1,9 @@
 <div class="mb-4">
   <label for="categ-select" class="form-label fw-semibold">Categoría</label>
-  <select name="categ-select" id="selectForm-add" class="form-select">
+  <select name="categSelect" id="selectForm-add" class="form-select">
     <option selected disabled>Selecciona una opción</option>
     {{#each categories}}
-    <option>{{id}} | {{name}}</option>
+    <option value="{{id}}">{{name}}</option>
     {{/each}}
   </select>
 </div>

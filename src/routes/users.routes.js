@@ -4,7 +4,7 @@ import { getUser, userRegister, userLogin } from "../controllers/auth.controller
 const router = Router();
 
 router.get('/users', getUser);
-router.post('/', userRegister);
+router.post('/register', userRegister);
 router.post('/login', userLogin);
 router.put('/users/:id');
 router.delete('/users/:id');

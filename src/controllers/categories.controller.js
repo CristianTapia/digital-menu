@@ -1,42 +1,34 @@
 import { category } from "../models/Category.js";
+import { product } from "../models/Product.js";
 
-const getCategory = async (req, res) => {
+const getAllCategories = async (req, res) => {
   try {
     const categories = await category.findAll({
-      // order: ["name", "ASC"]
+      order: [['name', 'ASC']]
     });
     res.json(categories);
   } catch (error) {
-    return res.status(500).json({message: error.message});
+    return res.status(500).json({ message: error.message });
   }
 };
 
-// const groupCategory = async (req, res) => {
-//   try {
-//     // const categories = await category.findAll({
-//     //   include: {
-//     //     model: Product,
-//     //     where: {
+const getCategoryById = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const categSelected = await category.findOne({
+      where: {
+        id,
+      },
+    });
 
-//     //     }
-//     //   }
-
-//       // User.findAll({
-//       //   include: {
-//       //     model: Tool,
-//       //     as: 'Instruments'
-//       //     where: {
-//       //       size: {
-//       //         [Op.ne]: 'small'
-//       //       }
-//       //     }
-//       //   }
-//       // });
-//     })
-//   } catch (error) {
-//     return res.status(500).json({message: error.message})
-//   }
-// }
+    if (!categSelected) {
+      return res.status(404).json({ message: error.message });
+    }
+    res.json(categSelected);
+  } catch (error) {
+    return res.status(500).json({ message: error.message });
+  }
+};
 
 const createCategory = async (req, res) => {
   try {
@@ -47,8 +39,55 @@ const createCategory = async (req, res) => {
     console.log(newCategory);
     res.json(newCategory);
   } catch (error) {
-    return res.status(500).json({message: error.message});
+    return res.status(500).json({ message: error.message });
   }
 };
 
-export { getCategory, createCategory };
+const updateCategory = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { name } = req.body;
+    const categName = await category.findByPk(id);
+    categName.name = name;
+    await categName.save();
+    res.json(categName);
+  } catch (error) {
+    return res.status(500).json({ message: error.message });
+  }
+};
+
+const deleteCategory = async (req, res) => {
+  try {
+    const { id } = req.params;
+    await category.destroy({
+      where: {
+        id,
+      },
+    });
+    res.status(204);
+  } catch (error) {
+    return res.status(500).json({ message: error.message });
+  }
+};
+
+const getCategoryProducts = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const products = await product.findAll({
+      where: { categoryId: id },
+      order: [['name', 'ASC']]
+    });
+    res.json(products);
+  } catch (error) {
+    return res.status(500).json({ message: error.message });
+  }
+};
+
+export {
+  getAllCategories,
+  getCategoryById,
+  createCategory,
+  updateCategory,
+  deleteCategory,
+  getCategoryProducts,
+};

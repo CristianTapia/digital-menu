@@ -4,6 +4,7 @@ import { fileURLToPath } from "url";
 import express from "express";
 import hbs from "hbs";
 import cookieParser from "cookie-parser";
+import Swal from "sweetalert2";
 
 // Sequelize and DB
 import { sequelize } from "./src/database/connection.js";
@@ -33,10 +34,11 @@ main();
 // Create express server
 const app = express();
 const port = 3000;
+//API puerto 4000
 
 /*********************************************
-*                Middleware                  *
-*********************************************/
+ *                Middleware                  *
+ *********************************************/
 
 // Define public folder for static files
 app.use(express.static("public"));
@@ -105,14 +107,22 @@ app.get("/editar-producto", async (req, res) => {
   res.render("edit-product", { categories: data });
 });
 
-app.get("/eliminar-producto", async (req, res) => {
-  const result = await fetch("http://localhost:3000/categories");
-  const data = await result.json();
-  res.render("del-product", { categories: data });
+app.get('/eliminar-producto', async (req, res) => {
+  let id = req.query.categSelect;
+  const resultCateg = await fetch("http://localhost:3000/categories");
+  const dataCateg = await resultCateg.json();
+  const resultCategProducts = await fetch(`http://localhost:3000/categories/${id}/products`);
+  const dataCategProducts = await resultCategProducts.json();
+  console.log(dataCategProducts);
+  res.render('del-product', { categories: dataCateg, products: dataCategProducts });
 });
 
 app.get("/asignar-mesa", (req, res) => {
   res.render("asign-table");
+});
+
+app.get("/productos", (req, res) => {
+  res.render("products");
 });
 
 app.get("/configuraciones", (req, res) => {

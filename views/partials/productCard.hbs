@@ -1,0 +1,14 @@
+{{#each products}}
+<div class="card mt-3 productCard" style="width: 12rem;">
+  <div class="card-body">
+    <h5 class="card-title">{{name}}</h5>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"><b>Valor:</b> ${{price}}</li>
+    <li class="list-group-item"><b>Descripción:</b> {{description}}</li>
+  </ul>
+  <div class="card-body">
+    <a href="#" class="card-link">Eliminar</a>
+  </div>
+</div>
+{{/each}}

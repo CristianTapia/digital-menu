@@ -5,7 +5,7 @@ const getWaiter = async (req, res) => {
     const waiters = await waiter.findAll();
     res.json(waiters);
   } catch (error) {
-    return res.status(500).json({message: error.message});
+    return res.status(500).json({ message: error.message });
   }
 };
 
@@ -19,7 +19,7 @@ const createWaiter = async (req, res) => {
     console.log(newWaiter);
     res.json(newWaiter);
   } catch (error) {
-    return res.status(500).json({message: error.message});
+    return res.status(500).json({ message: error.message });
   }
 };
 

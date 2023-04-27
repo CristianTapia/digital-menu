@@ -15,25 +15,16 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
   {{!-- CSS file --}}
   <link rel="stylesheet" href="/css/styles.css">
+  
 </head>
 
 <body>
-
   {{> header}}
   <div class="container-fluid">
     <div class="row">
       {{> sidebar}}
       <main class="col">
-        <div class="container justify-content-center mt-4">
-          <form id="showProdForm" class="w-75">
-            {{> categSelect}}
-            <button type="submit" class="btn btn-primary">Ver productos</button>
-          </form>
-        </div>
-
-        <div class="container d-flex gap-3">
-          {{> productCard}}
-        </div>
+        {{> productCard}}
       </main>
     </div>
   </div>
@@ -42,8 +33,8 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
     crossorigin="anonymous"></script>
+  <script src="/add-product.js"></script>
   <script src="/main.js"></script>
-
 </body>
 
 </html>
