@@ -102,9 +102,13 @@ app.get("/agregar-producto", async (req, res) => {
 });
 
 app.get("/editar-producto", async (req, res) => {
-  const result = await fetch("http://localhost:3000/categories");
-  const data = await result.json();
-  res.render("edit-product", { categories: data });
+  let id = req.query.categSelect;
+  const resultCateg = await fetch("http://localhost:3000/categories");
+  const dataCateg = await resultCateg.json();
+  const resultCategProducts = await fetch(`http://localhost:3000/categories/${id}/products`);
+  const dataCategProducts = await resultCategProducts.json();
+  console.log(dataCategProducts);
+  res.render("edit-product", { categories: dataCateg, products: dataCategProducts });
 });
 
 app.get('/eliminar-producto', async (req, res) => {
@@ -121,8 +125,10 @@ app.get("/asignar-mesa", (req, res) => {
   res.render("asign-table");
 });
 
-app.get("/productos", (req, res) => {
-  res.render("products");
+app.get("/productos", async (req, res) => {
+  const resultProdCateg = await fetch("http://localhost:3000/products/categories");
+  const dataProdCateg = await resultProdCateg.json();
+  res.render("products", { productCategories: dataProdCateg });
 });
 
 app.get("/configuraciones", (req, res) => {
