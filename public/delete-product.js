@@ -11,10 +11,9 @@ for (let i = 0; i < deleteBtn.length; i++) {
           method: "DELETE",
           headers: { "Content-Type": "application/json" },
         });
-        const result = await response.json();
-        console.log("Success: ", result);
-        if (result) {
-          alert("Eliminado con exito");
+        if (response) {
+          alert("Eliminado con éxito");
+          location.reload();
         }
       } catch (error) {
         console.error("Error: ", error);

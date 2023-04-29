@@ -31,6 +31,22 @@ const createProduct = async (req, res) => {
   }
 };
 
+const updateProduct = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { name, price, procedence, description } = req.body;
+    const products = await product.findByPk(id);
+    products.name = name;
+    products.price = price;
+    products.procedence = procedence;
+    products.description = description;
+    await products.save();
+    res.json(products);
+  } catch (error) {
+    return res.status(500).json({ message: error.message });
+  }
+};
+
 const deleteProduct = async (req, res) => {
   try {
     const { id } = req.params;
@@ -39,7 +55,8 @@ const deleteProduct = async (req, res) => {
         id,
       },
     });
-    res.status(204);
+    console.log('Producto eliminado con éxito')
+    res.status(204).send();
   } catch (error) {
     return res.status(500).json({ message: error.message });
   }
@@ -62,4 +79,4 @@ const joinProductsCategories = async (req, res) => {
   }
 }
 
-export { getProduct, createProduct, deleteProduct, joinProductsCategories };
+export { getProduct, createProduct, updateProduct, deleteProduct, joinProductsCategories };
