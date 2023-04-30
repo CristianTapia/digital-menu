@@ -1,6 +1,6 @@
 # Menú estandarizado
 
-## Fundamento
+## **Fundamento**
 Lograr una estandarización de cartas menú en restaurantes, bares y lugares relacionados al ámbito gastronómico.
 
 ### Front-End
@@ -15,18 +15,26 @@ Permite a los usuarios/as interactuar con los productos, selecionándolos y coma
 ![Back](https://user-images.githubusercontent.com/19751976/235373874-c2d64bda-eecf-4e49-a42c-6093a4c381a1.png)
 
 
+
 ### Avance del proyecto
 60 %
 
+
 ## Dependencias
 - Base de datos: [Supabase](https://supabase.com/)
+
+
 
 
 ## Instalación
 
 1. Descargar el repositorio
 
+
+
 2. Abrir la carpeta con VS Code y ejecutar la terminal
+
+
 
 3. Instalar componentes ejecutando:
 
@@ -34,20 +42,26 @@ Permite a los usuarios/as interactuar con los productos, selecionándolos y coma
     npm i
     ```
 
+
+
 4. Crear archivo `.env` en la raíz del proyecto
 
-  ![Carpetas](https://user-images.githubusercontent.com/19751976/235373331-ff085b6a-8625-4e11-9d3c-7420e127b87e.png)
+    ![Carpetas](https://user-images.githubusercontent.com/19751976/235373331-ff085b6a-8625-4e11-9d3c-7420e127b87e.png)
+
+
 
 5. Enviar correo electrónico a **ctapia.macaya@gmail.com** para obtener el código de vinculación a la base de datos. 
-  - Indicar si se quiere acceso a los datos o solo al código de vinculación.
+    - Indicar si se quiere acceso a los datos o solo al código de vinculación.
+
+
 
 6. Iniciar la aplicación web y API, ejecutando:
-```
-$ nodemon app.js
-```
-o
-```
-$ node app.js
-```
+    ```
+    nodemon app.js
+    ```
+    o
+    ```
+    node app.js
+    ```
 
 7. Ingresar a algún navegador web y ejecutar la [Aplicación]([https://supabase.com/](http://localhost:3000/))
