@@ -22,14 +22,23 @@ Permite a los usuarios/as interactuar con los productos, selecionándolos y coma
 
 2. Abrir la carpeta con VS Code y abrir la terminal
 
-3. Ejecutar ```npm i```
+3. Instalar componentes ejecutando:
+
+```
+$ npm i
+```
 
 4. Crear archivo `.env` en la raíz del proyecto
+
 ![Carpetas](https://user-images.githubusercontent.com/19751976/235373331-ff085b6a-8625-4e11-9d3c-7420e127b87e.png)
 
-5. Enviar [correo electrónico](ctapia.macaya@gmail.com) para obtener el código de desbloqueo a la base de datos.
+5. Enviar [correo electrónico](ctapia.macaya@gmail.com) para obtener el código de desbloqueo a la base de datos
 
-6. Ejecutar el 
+6. Iniciar la aplicación web y API, ejecutando:
 ```
-npm i
+$ nodemon app.js
+```
+o
+```
+$ node app.js
 ```
