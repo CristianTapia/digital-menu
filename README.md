@@ -16,8 +16,7 @@ Permite a los administradores de los locales gastronómicos gestionar la carta d
 
 
 
-### Avance del proyecto
-60 %
+### Avance del proyecto: **60 %**
 
 
 ## Dependencias
