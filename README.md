@@ -1,4 +1,4 @@
-# Menú estandarizado 📖
+# 📖 Menú estandarizado 
 
 
 ## Avance del proyecto: 60%
@@ -6,13 +6,13 @@
 ## Fundamento
 Lograr una estandarización de cartas menú en restaurantes, bares y lugares relacionados al ámbito gastronómico.
 
-### Front-End 📱
+### 📱 Front-End 
 Permite a los usuarios/as interactuar con los productos, selecionándolos y comandándolos directamente en la cocina/bar, sin necesidad de atención de meseros/as.
 
 ![Front](https://user-images.githubusercontent.com/19751976/235373866-fa9f133b-a4fa-4be4-84b5-16b3f749ac71.png)
 
 
-### Back-End 🖥️
+### 🖥️ Back-End 
 Permite a los administradores de los locales gastronómicos gestionar la carta de manera dinámica, ver las comandas que han llegado desde cada mesa, asignar mesas a distintos meseros/as, entre otras funcionalidades.
 
 ![Back](https://user-images.githubusercontent.com/19751976/235373874-c2d64bda-eecf-4e49-a42c-6093a4c381a1.png)
@@ -22,13 +22,13 @@ Permite a los administradores de los locales gastronómicos gestionar la carta d
 
 
 
-## Dependencias
+## 🧮 Dependencias
 - Base de datos: [Supabase](https://supabase.com/)
 
 
 
 
-## Instalación ⚙️
+## ⚙️ Instalación
 
 1. Descargar el repositorio
 
