@@ -1,5 +1,7 @@
 # Menú estandarizado
 
+## Avance del proyecto: 60%
+
 ## Fundamento
 Lograr una estandarización de cartas menú en restaurantes, bares y lugares relacionados al ámbito gastronómico.
 
@@ -16,7 +18,7 @@ Permite a los administradores de los locales gastronómicos gestionar la carta d
 
 
 
-### Avance del proyecto: **60 %**
+
 
 
 ## Dependencias
@@ -63,4 +65,4 @@ Permite a los administradores de los locales gastronómicos gestionar la carta d
     node app.js
     ```
 
-7. Ingresar a algún navegador web y ejecutar la [Aplicación](http://localhost:3000/)
+7. Ingresar a algún navegador web y ejecutar la [aplicación](http://localhost:3000/)
