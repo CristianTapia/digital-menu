@@ -1,31 +1,31 @@
 {{#each products}}
 <div class="card mt-3 productCard" style="width: 12rem;">
   <div class="card-body">
-    <h5 class="card-title" id="name">{{name}}</h5>
-    <h5 id="input-title" class="card-title d-none">
+    <h5 class="card-title name">{{name}}</h5>
+    <h5 class="card-title input-title d-none">
       <b>Título:</b><input name="title" type="text" class="form-control">
     </h5>
   </div>
   <ul class="list-group list-group-flush">
     <li class="list-group-item">
-      <b>Precio:</b><div id="price">${{price}}</div>
-      <input id="input-price" name="price" type="number" class="form-control d-none">
+      <b>Precio:</b><div class="price">${{price}}</div>
+      <input name="price" type="number" class="form-control input-price d-none">
     </li>
       
     <li class="list-group-item">
-      <b>Procedencia:</b><div id="procedence">{{procedence}}</div>
-      <input id="input-procedence" name="procedence" type="text" class="form-control d-none">
+      <b>Procedencia:</b><div class="procedence">{{procedence}}</div>
+      <input name="procedence" type="text" class="form-control input-procedence d-none">
     </li>
 
     <li class="list-group-item">
-      <b>Descripción:</b><div id="description">{{description}}</div>
-      <input id="input-description" name="description" type="text" class="form-control d-none">
+      <b>Descripción:</b><div class="description">{{description}}</div>
+      <input name="description" type="text" class="form-control input-description d-none">
     </li>
 
   </ul>
   <div class="card-body">
-    <button id="edit-btn" class="card-link edit-btn">Editar</button>
-    <button id="done-btn" class="card-link done-btn d-none" value="{{id}}">Hecho</button>
+    <button class="card-link edit-btn">Editar</button>
+    <button class="card-link done-btn d-none" value="{{id}}">Hecho</button>
   </div>
 </div>
 {{/each}}
