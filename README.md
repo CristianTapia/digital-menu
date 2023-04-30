@@ -1,6 +1,6 @@
 # Menú estandarizado
 
-## **Fundamento**
+## Fundamento
 Lograr una estandarización de cartas menú en restaurantes, bares y lugares relacionados al ámbito gastronómico.
 
 ### Front-End
@@ -10,7 +10,7 @@ Permite a los usuarios/as interactuar con los productos, selecionándolos y coma
 
 
 ### Back-End
-- Back-End: Permite a los administradores de los locales gastronómicos gestionar la carta de manera dinámica, ver las comandas que han llegado desde cada mesa, asignar mesas a distintos meseros/as, entre otras funcionalidades.
+Permite a los administradores de los locales gastronómicos gestionar la carta de manera dinámica, ver las comandas que han llegado desde cada mesa, asignar mesas a distintos meseros/as, entre otras funcionalidades.
 
 ![Back](https://user-images.githubusercontent.com/19751976/235373874-c2d64bda-eecf-4e49-a42c-6093a4c381a1.png)
 
@@ -64,4 +64,4 @@ Permite a los usuarios/as interactuar con los productos, selecionándolos y coma
     node app.js
     ```
 
-7. Ingresar a algún navegador web y ejecutar la [Aplicación]([https://supabase.com/](http://localhost:3000/))
+7. Ingresar a algún navegador web y ejecutar la [Aplicación](http://localhost:3000/)
