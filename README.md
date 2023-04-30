@@ -5,7 +5,7 @@
 ## Fundamento
 Lograr una estandarización de cartas menú en restaurantes, bares y lugares relacionados al ámbito gastronómico.
 
-### Front-End
+### :iphone: Front-End
 Permite a los usuarios/as interactuar con los productos, selecionándolos y comandándolos directamente en la cocina/bar, sin necesidad de atención de meseros/as.
 
 ![Front](https://user-images.githubusercontent.com/19751976/235373866-fa9f133b-a4fa-4be4-84b5-16b3f749ac71.png)
